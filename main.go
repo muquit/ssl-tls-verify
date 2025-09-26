@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"net/smtp"
 	"strings"
 	"time"
 )
@@ -266,35 +265,74 @@ func testStartTLS(config Config) error {
 
 	fmt.Println("Plain connection established, attempting StartTLS...")
 
-	// For demonstration, we'll use SMTP as an example of StartTLS
-	// This assumes the server supports SMTP protocol
-	client, err := smtp.NewClient(conn, config.Host)
+	// For SMTP, we need to do the protocol handshake manually to maintain control
+	// over the connection for certificate inspection
+	
+	// Read server greeting
+	buffer := make([]byte, 1024)
+	n, err := conn.Read(buffer)
 	if err != nil {
-		return fmt.Errorf("failed to create SMTP client: %w", err)
+		return fmt.Errorf("failed to read server greeting: %w", err)
 	}
-	defer client.Quit()
-
-	// Check if the server supports StartTLS
-	if ok, _ := client.Extension("STARTTLS"); !ok {
-		return fmt.Errorf("server does not support StartTLS")
+	fmt.Printf("Server greeting: %s", string(buffer[:n]))
+	
+	// Send EHLO command
+	ehloCmd := fmt.Sprintf("EHLO %s\r\n", config.Host)
+	_, err = conn.Write([]byte(ehloCmd))
+	if err != nil {
+		return fmt.Errorf("failed to send EHLO: %w", err)
+	}
+	
+	// Read EHLO response
+	n, err = conn.Read(buffer)
+	if err != nil {
+		return fmt.Errorf("failed to read EHLO response: %w", err)
+	}
+	ehloResponse := string(buffer[:n])
+	fmt.Printf("EHLO response: %s", ehloResponse)
+	
+	// Check if STARTTLS is supported
+	if !strings.Contains(ehloResponse, "STARTTLS") {
+		return fmt.Errorf("server does not support STARTTLS")
+	}
+	
+	// Send STARTTLS command
+	_, err = conn.Write([]byte("STARTTLS\r\n"))
+	if err != nil {
+		return fmt.Errorf("failed to send STARTTLS: %w", err)
+	}
+	
+	// Read STARTTLS response
+	n, err = conn.Read(buffer)
+	if err != nil {
+		return fmt.Errorf("failed to read STARTTLS response: %w", err)
+	}
+	startTLSResponse := string(buffer[:n])
+	fmt.Printf("STARTTLS response: %s", startTLSResponse)
+	
+	// Check for successful STARTTLS response (220)
+	if !strings.HasPrefix(startTLSResponse, "220") {
+		return fmt.Errorf("STARTTLS command failed: %s", startTLSResponse)
 	}
 
-	// Configure TLS
+	// Now upgrade to TLS
 	tlsConfig := &tls.Config{
 		ServerName:         config.Host,
 		InsecureSkipVerify: config.SkipVerify,
 	}
 
-	// Upgrade to TLS
-	if err = client.StartTLS(tlsConfig); err != nil {
-		return fmt.Errorf("StartTLS failed: %w", err)
+	tlsConn := tls.Client(conn, tlsConfig)
+	
+	// Perform TLS handshake
+	if err := tlsConn.Handshake(); err != nil {
+		return fmt.Errorf("TLS handshake failed: %w", err)
 	}
 
 	fmt.Println("StartTLS upgrade successful!")
 
-	fmt.Println("TLS connection is now active")
-	// Note: smtp.Client doesn't expose the underlying TLS connection state directly
-	// For detailed TLS info, see the testGenericStartTLS function below
+	// Get certificate information
+	state := tlsConn.ConnectionState()
+	printTLSConnectionInfo(state)
 
 	return nil
 }
