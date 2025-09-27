@@ -36,7 +36,7 @@ If you have any question, request or suggestion, please enter it in the
 ## Background
 
 There was a lingering bug in [mailsend-go](https://github.com/muquit/mailsend-go) that `-verifyCert` does not work.
-I was not getting time to look at the code and figure out the issue, so I asked [Claude AI 4 Sonnet](https://claude.ai) to
+I was not getting time to look at the code and figure out the issue, so I asked [Claude AI Sonnet 4](https://claude.ai) to
 write a simple CLI tool to verify certificates with optional verification. Hence, `ssl-tls-verify` was born.
 After creating this tool, it became clear to me that I had missed `ServerName` in `tls.Config` -
 a critical field needed for proper certificate hostname validation.
@@ -194,7 +194,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/09/27 15:08:34 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/09/27 15:11:50 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -244,7 +244,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4db119f05a0sm45354431cf.43 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-85c298ef869sm491836085a.28 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -328,7 +328,7 @@ StartTLS connection successful!
 This project is released under the MIT License. See LICENSE file for details.
 
 ## Authors
-* Developed with [Claude AI 4 Sonnet](https://claude.ai), working under my guidance and instructions.
+* Developed with [Claude AI Sonnet 4](https://claude.ai), working under my guidance and instructions.
 
 
 ---
