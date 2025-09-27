@@ -14,6 +14,8 @@ import (
 	"regexp"
 	"strings"
 	"time"
+
+	"github.com/muquit/ssl-tls-verify/pkg/version"
 )
 
 type Config struct {
@@ -24,16 +26,38 @@ type Config struct {
 	ConnectTimeout time.Duration
 }
 
+const (
+	me = "ssl-tls-verify"
+	url = "https://github.com/muquit/ssl-tls-verify"
+)
+
 func main() {
 	var config Config
+	var showVersion bool
 
-	// Command line flags
 	flag.StringVar(&config.Host, "host", "google.com", "Target host")
 	flag.StringVar(&config.Port, "port", "443", "Target port (443 for HTTPS, 587 for SMTP StartTLS)")
 	flag.BoolVar(&config.SkipVerify, "skip-verify", false, "Skip certificate verification")
 	flag.BoolVar(&config.UseStartTLS, "starttls", false, "Use StartTLS (for SMTP-like protocols)")
 	flag.DurationVar(&config.ConnectTimeout, "timeout", 10*time.Second, "Connection timeout")
+    flag.BoolVar(&showVersion, "version", false, "Show version information and exit")
+
+	flag.Usage = func() {
+		out := os.Stdout
+		fmt.Fprintf(out, "%s %s\n%s\n", me, version.Get(), url)
+		fmt.Fprintf(out, "A cross-platform command line tool to test and verify SSL/TLS connections\n")
+		flag.PrintDefaults()
+	}
+
+
+
 	flag.Parse()
+
+	if (showVersion) {
+		fmt.Printf("%s %s\n%s\n", me, version.Get(), url)
+		os.Exit(0)
+	}
+
 
 	fmt.Printf("Connecting to %s:%s\n", config.Host, config.Port)
 	fmt.Printf("Skip certificate verification: %v\n", config.SkipVerify)

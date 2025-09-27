@@ -1,0 +1,18 @@
+## Synopsis
+```
+ssl-tls-verify v1.0.1
+https://github.com/muquit/ssl-tls-verify
+A cross-platform command line tool to test and verify SSL/TLS connections
+  -host string
+    	Target host (default "google.com")
+  -port string
+    	Target port (443 for HTTPS, 587 for SMTP StartTLS) (default "443")
+  -skip-verify
+    	Skip certificate verification
+  -starttls
+    	Use StartTLS (for SMTP-like protocols)
+  -timeout duration
+    	Connection timeout (default 10s)
+  -version
+    	Show version information and exit
+```
