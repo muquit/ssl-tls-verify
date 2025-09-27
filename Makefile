@@ -74,7 +74,7 @@ sample_output:
 	@echo '```bash' >> $(SAMPLE)
 	@MAILSEND_MASK_IP=1 $(BINARY) -host 127.0.0.1 -port 8881 -skip-verify >> $(SAMPLE) 2>&1
 	@echo '```' >> $(SAMPLE)
-	@echo "#### SMTP with StartTLS" >> $(SAMPLE)
+	@echo "#### smtp.gmail.com with StartTLS" >> $(SAMPLE)
 	@echo '```bash' >> $(SAMPLE)
 	@echo "$(BINARY) --host smtp.gmail.com --port 587 --starttls" >> $(SAMPLE)
 	@echo '```' >> $(SAMPLE)

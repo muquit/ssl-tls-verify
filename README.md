@@ -11,7 +11,7 @@
       - [google.com HTTPS port 443](#googlecom-https-port-443)
       - [Server using self signed certificate](#server-using-self-signed-certificate)
       - [Skip Verification](#skip-verification)
-      - [SMTP with StartTLS](#smtp-with-starttls)
+      - [smtp.gmail.com with StartTLS](#smtpgmailcom-with-starttls)
   - [License](#license)
   - [Authors](#authors)
 
@@ -194,7 +194,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/09/27 15:11:50 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/09/27 16:37:52 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -234,7 +234,7 @@ SHA-256 Fingerprint:   43:B8:D4:CF:36:CF:3D:B7:6A:12:06:C2:74:C8:8B:A0:D4:CE:8A:
 Certificate Authority: Yes
 Direct TLS connection successful!
 ```
-#### SMTP with StartTLS
+#### smtp.gmail.com with StartTLS
 ```bash
 ./ssl-tls-verify --host smtp.gmail.com --port 587 --starttls
 ```
@@ -244,7 +244,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-85c298ef869sm491836085a.28 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-85c2737869esm489698085a.11 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
