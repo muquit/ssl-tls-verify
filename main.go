@@ -10,6 +10,8 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"os"
+	"regexp"
 	"strings"
 	"time"
 )
@@ -53,6 +55,40 @@ func main() {
 			fmt.Println("Direct TLS connection successful!")
 		}
 	}
+}
+
+// maskIPAddresses masks IPv4 and IPv6 addresses in text
+func maskIPAddresses(text string) string {
+	if os.Getenv("MAILSEND_MASK_IP") == "" {
+		return text
+	}
+	
+	// IPv4 pattern: matches xxx.xxx.xxx.xxx format
+	ipv4Pattern := regexp.MustCompile(`\b(\d{1,3}\.){3}\d{1,3}\b`)
+	
+	// IPv6 pattern: matches various IPv6 formats
+	ipv6Pattern := regexp.MustCompile(`\b([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}\b`)
+	
+	// Replace IPv4 addresses
+	maskedText := ipv4Pattern.ReplaceAllString(text, "xxx.xxx.xxx.xxx")
+	
+	// Replace IPv6 addresses  
+	maskedText = ipv6Pattern.ReplaceAllString(maskedText, "xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx")
+	
+	return maskedText
+}
+
+// maskIPSlice masks IP addresses in a string slice
+func maskIPSlice(addresses []string) []string {
+	if os.Getenv("MAILSEND_MASK_IP") == "" {
+		return addresses
+	}
+	
+	masked := make([]string, len(addresses))
+	for i, addr := range addresses {
+		masked[i] = maskIPAddresses(addr)
+	}
+	return masked
 }
 
 // testDirectTLS tests a direct TLS connection (like HTTPS)
@@ -127,8 +163,8 @@ func printTLSConnectionInfo(state tls.ConnectionState) {
 
 // printCertificateDetails prints detailed certificate information in a pretty format
 func printCertificateDetails(cert *x509.Certificate) {
-	fmt.Printf("Subject:               %s\n", cert.Subject.String())
-	fmt.Printf("Issuer:                %s\n", cert.Issuer.String())
+	fmt.Printf("Subject:               %s\n", maskIPAddresses(cert.Subject.String()))
+	fmt.Printf("Issuer:                %s\n", maskIPAddresses(cert.Issuer.String()))
 	fmt.Printf("Serial Number:         %s\n", cert.SerialNumber.String())
 	fmt.Printf("Version:               %d\n", cert.Version)
 	
@@ -148,19 +184,22 @@ func printCertificateDetails(cert *x509.Certificate) {
 		fmt.Printf("Status:                ✅ Valid (%d days remaining)\n", daysLeft)
 	}
 	
-	// Subject Alternative Names
+	// Subject Alternative Names with IP masking
 	if len(cert.DNSNames) > 0 {
-		fmt.Printf("DNS Names:             %s\n", strings.Join(cert.DNSNames, ", "))
+		maskedDNS := maskIPSlice(cert.DNSNames)
+		fmt.Printf("DNS Names:             %s\n", strings.Join(maskedDNS, ", "))
 	}
 	if len(cert.IPAddresses) > 0 {
 		ips := make([]string, len(cert.IPAddresses))
 		for i, ip := range cert.IPAddresses {
 			ips[i] = ip.String()
 		}
-		fmt.Printf("IP Addresses:          %s\n", strings.Join(ips, ", "))
+		maskedIPs := maskIPSlice(ips)
+		fmt.Printf("IP Addresses:          %s\n", strings.Join(maskedIPs, ", "))
 	}
 	if len(cert.EmailAddresses) > 0 {
-		fmt.Printf("Email Addresses:       %s\n", strings.Join(cert.EmailAddresses, ", "))
+		maskedEmails := maskIPSlice(cert.EmailAddresses)
+		fmt.Printf("Email Addresses:       %s\n", strings.Join(maskedEmails, ", "))
 	}
 	
 	// Key information
@@ -274,7 +313,8 @@ func testStartTLS(config Config) error {
 	if err != nil {
 		return fmt.Errorf("failed to read server greeting: %w", err)
 	}
-	fmt.Printf("Server greeting: %s", string(buffer[:n]))
+	greeting := string(buffer[:n])
+	fmt.Printf("Server greeting: %s", maskIPAddresses(greeting))
 	
 	// Send EHLO command
 	ehloCmd := fmt.Sprintf("EHLO %s\r\n", config.Host)
@@ -289,7 +329,7 @@ func testStartTLS(config Config) error {
 		return fmt.Errorf("failed to read EHLO response: %w", err)
 	}
 	ehloResponse := string(buffer[:n])
-	fmt.Printf("EHLO response: %s", ehloResponse)
+	fmt.Printf("EHLO response: %s", maskIPAddresses(ehloResponse))
 	
 	// Check if STARTTLS is supported
 	if !strings.Contains(ehloResponse, "STARTTLS") {
@@ -308,7 +348,7 @@ func testStartTLS(config Config) error {
 		return fmt.Errorf("failed to read STARTTLS response: %w", err)
 	}
 	startTLSResponse := string(buffer[:n])
-	fmt.Printf("STARTTLS response: %s", startTLSResponse)
+	fmt.Printf("STARTTLS response: %s", maskIPAddresses(startTLSResponse))
 	
 	// Check for successful STARTTLS response (220)
 	if !strings.HasPrefix(startTLSResponse, "220") {
