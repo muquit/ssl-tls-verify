@@ -3,8 +3,8 @@
 verify SSL/TLS connections with detailed certificate inspection.
 It supports both direct TLS connections (like HTTPS) and StartTLS protocol 
 upgrades (like SMTP). 
-The tool provides comprehensive certificate chain analysis with pretty-
-printed output, making it ideal for debugging SSL/TLS issues, 
+The tool provides comprehensive certificate chain analysis with 
+pretty-printed output, making it ideal for debugging SSL/TLS issues, 
 certificate validation problems, and connection troubleshooting.
 
 Unlike basic tools like `openssl s_client`, this utility focuses on 

@@ -20,8 +20,8 @@
 verify SSL/TLS connections with detailed certificate inspection.
 It supports both direct TLS connections (like HTTPS) and StartTLS protocol 
 upgrades (like SMTP). 
-The tool provides comprehensive certificate chain analysis with pretty-
-printed output, making it ideal for debugging SSL/TLS issues, 
+The tool provides comprehensive certificate chain analysis with 
+pretty-printed output, making it ideal for debugging SSL/TLS issues, 
 certificate validation problems, and connection troubleshooting.
 
 Unlike basic tools like `openssl s_client`, this utility focuses on 
@@ -194,7 +194,7 @@ Connecting to 127.0.0.1:8881
 Skip certificate verification: false
 Use StartTLS: false
 
-2025/09/27 14:45:48 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/09/27 15:04:48 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -244,7 +244,7 @@ Skip certificate verification: false
 Use StartTLS: true
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-801667815bbsm45318496d6.40 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-80135b54636sm45566876d6.6 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
