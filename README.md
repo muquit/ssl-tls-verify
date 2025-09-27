@@ -114,8 +114,8 @@ Test with custom timeout:
 ```
 ```bash
 Connecting to google.com:443
-Skip certificate verification: false
-Use StartTLS: false
+Verify Certificate: Yes
+Use StartTLS: No
 
 
 ============================================================
@@ -191,10 +191,10 @@ Direct TLS connection successful!
 ```
 ```bash
 Connecting to 127.0.0.1:8881
-Skip certificate verification: false
-Use StartTLS: false
+Verify Certificate: Yes
+Use StartTLS: No
 
-2025/09/27 15:04:48 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/09/27 15:08:34 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -203,8 +203,8 @@ Use StartTLS: false
 ```
 ```bash
 Connecting to 127.0.0.1:8881
-Skip certificate verification: true
-Use StartTLS: false
+Verify Certificate: No
+Use StartTLS: No
 
 
 ============================================================
@@ -240,11 +240,11 @@ Direct TLS connection successful!
 ```
 ```bash
 Connecting to smtp.gmail.com:587
-Skip certificate verification: false
-Use StartTLS: true
+Verify Certificate: Yes
+Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-80135b54636sm45566876d6.6 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4db119f05a0sm45354431cf.43 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME

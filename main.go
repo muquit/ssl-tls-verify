@@ -60,8 +60,18 @@ func main() {
 
 
 	fmt.Printf("Connecting to %s:%s\n", config.Host, config.Port)
-	fmt.Printf("Skip certificate verification: %v\n", config.SkipVerify)
-	fmt.Printf("Use StartTLS: %v\n", config.UseStartTLS)
+	if config.SkipVerify {
+		fmt.Println("Verify Certificate: No")
+	} else {
+		fmt.Println("Verify Certificate: Yes")
+	}
+
+	if config.UseStartTLS {
+		fmt.Println("Use StartTLS: Yes")
+	} else {
+		fmt.Println("Use StartTLS: No")
+	}
+
 	fmt.Println()
 
 	if config.UseStartTLS {
