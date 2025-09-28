@@ -1,3 +1,3 @@
 ## License
 
-This project is released under the MIT License. See LICENSE file for details.
+The license is MIT. See @LICENSE@ file for details.
