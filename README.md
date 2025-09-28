@@ -38,8 +38,7 @@ If you have any question, request or suggestion, please enter it in the
 There was a lingering bug in [mailsend-go](https://github.com/muquit/mailsend-go) that `-verifyCert` does not work.
 I was not getting time to look at the code and figure out the issue, so I asked [Claude AI Sonnet 4](https://claude.ai) to
 write a simple CLI tool to verify certificates with optional verification. Hence, `ssl-tls-verify` was born.
-After creating this tool, it became clear to me that I had missed `ServerName` in `tls.Config` -
-a critical field needed for proper certificate hostname validation.
+After creating this tool, I realiased that I had missed `ServerName` in `tls.Config`.
 I also love this tool, it's much nicer than openssl with its human-readable output,
 clear certificate chain display, and intuitive formatting. What started as a debugging
 utility has become my go-to tool for SSL/TLS certificate inspection. 
@@ -138,7 +137,7 @@ Serial Number:         133813938596851887989668938256071211179
 Version:               3
 Valid From:            2025-09-08 08:34:53 UTC
 Valid Until:           2025-12-01 08:34:52 UTC
-Status:                ✅ Valid (64 days remaining)
+Status:                ✅ Valid (63 days remaining)
 DNS Names:             *.google.com, *.appengine.google.com, *.bdn.dev, *.origin-test.bdn.dev, *.cloud.google.com, *.crowdsource.google.com, *.datacompute.google.com, *.google.ca, *.google.cl, *.google.co.in, *.google.co.jp, *.google.co.uk, *.google.com.ar, *.google.com.au, *.google.com.br, *.google.com.co, *.google.com.mx, *.google.com.tr, *.google.com.vn, *.google.de, *.google.es, *.google.fr, *.google.hu, *.google.it, *.google.nl, *.google.pl, *.google.pt, *.googleapis.cn, *.googlevideo.com, *.gstatic.cn, *.gstatic-cn.com, googlecnapps.cn, *.googlecnapps.cn, googleapps-cn.com, *.googleapps-cn.com, gkecnapps.cn, *.gkecnapps.cn, googledownloads.cn, *.googledownloads.cn, recaptcha.net.cn, *.recaptcha.net.cn, recaptcha-cn.net, *.recaptcha-cn.net, widevine.cn, *.widevine.cn, ampproject.org.cn, *.ampproject.org.cn, ampproject.net.cn, *.ampproject.net.cn, google-analytics-cn.com, *.google-analytics-cn.com, googleadservices-cn.com, *.googleadservices-cn.com, googlevads-cn.com, *.googlevads-cn.com, googleapis-cn.com, *.googleapis-cn.com, googleoptimize-cn.com, *.googleoptimize-cn.com, doubleclick-cn.net, *.doubleclick-cn.net, *.fls.doubleclick-cn.net, *.g.doubleclick-cn.net, doubleclick.cn, *.doubleclick.cn, *.fls.doubleclick.cn, *.g.doubleclick.cn, dartsearch-cn.net, *.dartsearch-cn.net, googletraveladservices-cn.com, *.googletraveladservices-cn.com, googletagservices-cn.com, *.googletagservices-cn.com, googletagmanager-cn.com, *.googletagmanager-cn.com, googlesyndication-cn.com, *.googlesyndication-cn.com, *.safeframe.googlesyndication-cn.com, app-measurement-cn.com, *.app-measurement-cn.com, gvt1-cn.com, *.gvt1-cn.com, gvt2-cn.com, *.gvt2-cn.com, 2mdn-cn.net, *.2mdn-cn.net, googleflights-cn.net, *.googleflights-cn.net, admob-cn.com, *.admob-cn.com, *.gemini.cloud.google.com, googlesandbox-cn.com, *.googlesandbox-cn.com, *.safenup.googlesandbox-cn.com, *.gstatic.com, *.metric.gstatic.com, *.gvt1.com, *.gcpcdn.gvt1.com, *.gvt2.com, *.gcp.gvt2.com, *.url.google.com, *.youtube-nocookie.com, *.ytimg.com, ai.android, android.com, *.android.com, *.flash.android.com, g.cn, *.g.cn, g.co, *.g.co, goo.gl, www.goo.gl, google-analytics.com, *.google-analytics.com, google.com, googlecommerce.com, *.googlecommerce.com, ggpht.cn, *.ggpht.cn, urchin.com, *.urchin.com, youtu.be, youtube.com, *.youtube.com, music.youtube.com, *.music.youtube.com, youtubeeducation.com, *.youtubeeducation.com, youtubekids.com, *.youtubekids.com, yt.be, *.yt.be, android.clients.google.com, *.android.google.cn, *.chrome.google.cn, *.developers.google.cn, *.aistudio.google.com
 Public Key Algorithm:  ECDSA
 Signature Algorithm:   SHA256-RSA
@@ -157,7 +156,7 @@ Serial Number:         170058220837755766831192027518741805976
 Version:               3
 Valid From:            2023-12-13 09:00:00 UTC
 Valid Until:           2029-02-20 14:00:00 UTC
-Status:                ✅ Valid (1241 days remaining)
+Status:                ✅ Valid (1240 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -195,7 +194,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/09/27 20:27:11 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/09/28 19:21:41 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -227,7 +226,7 @@ Serial Number:         454408322901924448778008546212275614144524718803
 Version:               3
 Valid From:            2025-09-27 18:16:21 UTC
 Valid Until:           2035-09-25 18:16:21 UTC
-Status:                ✅ Valid (3649 days remaining)
+Status:                ✅ Valid (3648 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 SHA-1 Fingerprint:     D7:4B:21:59:30:4C:84:B0:7C:5D:2E:80:15:66:32:88:7D:62:65:BB
@@ -245,7 +244,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-85c28a8d4d8sm518103185a.25 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-8013cdf32a4sm62344086d6.21 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -276,7 +275,7 @@ Serial Number:         14461562026188826353951632455228095006
 Version:               3
 Valid From:            2025-09-08 08:36:45 UTC
 Valid Until:           2025-12-01 08:36:44 UTC
-Status:                ✅ Valid (64 days remaining)
+Status:                ✅ Valid (63 days remaining)
 DNS Names:             smtp.gmail.com
 Public Key Algorithm:  ECDSA
 Signature Algorithm:   SHA256-RSA
@@ -295,7 +294,7 @@ Serial Number:         170058220837755766831192027518741805976
 Version:               3
 Valid From:            2023-12-13 09:00:00 UTC
 Valid Until:           2029-02-20 14:00:00 UTC
-Status:                ✅ Valid (1241 days remaining)
+Status:                ✅ Valid (1240 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -333,4 +332,4 @@ The license is MIT. See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-27-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-28-2025</sub>
