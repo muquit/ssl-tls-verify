@@ -85,5 +85,5 @@ sample_output:
 
 
 clean:
-	@/bin/rm -rf ./bin $
+	@/bin/rm -rf ./bin
 	@/bin/rm -f $(BINARY)
