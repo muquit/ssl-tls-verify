@@ -42,8 +42,9 @@ After creating this tool, it became clear to me that I had missed `ServerName` i
 a critical field needed for proper certificate hostname validation.
 I also love this tool, it's much nicer than openssl with its human-readable output,
 clear certificate chain display, and intuitive formatting. What started as a debugging
-utility has become my go-to tool for SSL/TLS certificate inspection. Hope you
-find that tool useful as well.
+utility has become my go-to tool for SSL/TLS certificate inspection. 
+
+Hope you find the tool useful as well.
 
 ## Synopsis
 ```
@@ -175,7 +176,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (852 days remaining)
+Status:                ✅ Valid (851 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -194,7 +195,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/09/27 16:37:52 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/09/27 20:16:19 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -244,7 +245,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-85c2737869esm489698085a.11 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4db0b56fda6sm47014851cf.13 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -313,7 +314,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (852 days remaining)
+Status:                ✅ Valid (851 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing

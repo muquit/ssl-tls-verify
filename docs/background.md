@@ -7,5 +7,6 @@ After creating this tool, it became clear to me that I had missed `ServerName` i
 a critical field needed for proper certificate hostname validation.
 I also love this tool, it's much nicer than openssl with its human-readable output,
 clear certificate chain display, and intuitive formatting. What started as a debugging
-utility has become my go-to tool for SSL/TLS certificate inspection. Hope you
-find that tool useful as well.
+utility has become my go-to tool for SSL/TLS certificate inspection. 
+
+Hope you find the tool useful as well.
