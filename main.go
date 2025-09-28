@@ -1,5 +1,10 @@
 package main
 
+/*
+** With assistance from Claude AI Sonnet 4
+** muquit@muquit.com Sep-27-2025 
+*/
+
 import (
 	"crypto/sha1"
 	"crypto/sha256"
