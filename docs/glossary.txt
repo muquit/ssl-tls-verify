@@ -11,7 +11,7 @@ ME          clip-httpd
 ITERM2      [iTerm2](https://iterm2.com/)
 MOSH        [mosh](https://mosh.org/)
 TMUX        [tmux](https://github.com/tmux/tmux/wiki)
-GO          [Go](https://go.dev/)
+GO          [go](https://go.dev/)
 CLIPBOARD   [clipboard](https://github.com/atotto/clipboard)
 CURL        [curl](https://curl.se/)
 URL         https://github.com/muquit/clip-httpd

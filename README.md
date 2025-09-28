@@ -27,7 +27,7 @@ certificate validation problems, and connection troubleshooting.
 Unlike basic tools like `openssl s_client`, this utility focuses on 
 providing human-readable certificate information with expiry warnings, 
 fingerprint validation, and detailed TLS connection state analysis. All 
-the certificate parsing and validation is handled by [Go](https://go.dev/)'s 
+the certificate parsing and validation is handled by [go](https://go.dev/)'s 
 `crypto/tls` and `crypto/x509` packages.
 
 If you have any question, request or suggestion, please enter it in the
@@ -195,7 +195,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/09/27 20:17:42 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/09/27 20:27:11 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -245,7 +245,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4db11fc7bd1sm47409191cf.52 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-85c28a8d4d8sm518103185a.25 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
