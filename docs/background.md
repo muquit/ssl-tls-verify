@@ -1,6 +1,6 @@
 ## Background
 
-There was a lingering bug in @MAILSEND_GO@ that `-verifyCert` does not work.
+There was a lingering bug in @MAILSEND_GO@ that `-verifyCert` was broken.
 I was not getting time to look at the code and figure out the issue, so I asked @CLAUDE@ to
 write a simple CLI tool to verify certificates with optional verification. Hence, `ssl-tls-verify` was born.
 After creating this tool, I realized I had missed `ServerName` in `tls.Config`.
