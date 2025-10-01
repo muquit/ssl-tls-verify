@@ -97,7 +97,33 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: No
 Use StartTLS: No
 
-2025/09/29 15:15:22 Direct TLS connection failed: failed to establish TLS connection: dial tcp 127.0.0.1:8881: connect: connection refused
+
+============================================================
+TLS CONNECTION INFORMATION
+============================================================
+TLS Version:           TLS 1.3 (0x0304)
+Cipher Suite:          0x1301
+Server Certificates:   1
+Handshake Complete:    true
+Did Resume:            false
+Negotiated Protocol:
+
+------------------------------------------------------------
+SERVER CERTIFICATE #1 (Leaf Certificate)
+------------------------------------------------------------
+Subject:               CN=example.com,OU=example.com,O=Fo Bar LLC,L=Foo Bar,ST=Example,C=AU,1.2.840.113549.1.9.1=#0c106a646f65406578616d706c652e636f6d
+Issuer:                CN=example.com,OU=example.com,O=Fo Bar LLC,L=Foo Bar,ST=Example,C=AU,1.2.840.113549.1.9.1=#0c106a646f65406578616d706c652e636f6d
+Serial Number:         454408322901924448778008546212275614144524718803
+Version:               3
+Valid From:            2025-09-27 18:16:21 UTC
+Valid Until:           2035-09-25 18:16:21 UTC
+Status:                ✅ Valid (3646 days remaining)
+Public Key Algorithm:  RSA
+Signature Algorithm:   SHA256-RSA
+SHA-1 Fingerprint:     D7:4B:21:59:30:4C:84:B0:7C:5D:2E:80:15:66:32:88:7D:62:65:BB
+SHA-256 Fingerprint:   43:B8:D4:CF:36:CF:3D:B7:6A:12:06:C2:74:C8:8B:A0:D4:CE:8A:AD:7B:6C:A5:1C:C8:6D:2B:DB:D5:A9:13:8F
+Certificate Authority: Yes
+Direct TLS connection successful!
 ```
 #### smtp.gmail.com with StartTLS
 ```bash
