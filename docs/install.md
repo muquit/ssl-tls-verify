@@ -1,5 +1,7 @@
 ## Installation
 
+### Download pre-compiled bianries
+
 Please download pre-compiled binaries from @RELEASES@ page
 
 ### Build from source
