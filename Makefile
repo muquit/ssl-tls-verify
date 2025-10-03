@@ -7,9 +7,10 @@ BUILD_OPTIONS = -trimpath
 MARKDOWN_TOC_PROG=markdown-toc-go
 GLOSSARY_FILE=./docs/glossary.txt
 MAIN_MD=./docs/main.md
+MAN_PAGE=./docs/ssl-tls-verify.1
 
 
-all: build build_all doc
+all: build build_all doc man_page
 
 build:
 	@echo "Compiling ..."
@@ -18,15 +19,23 @@ build:
 build_all:
 	@/bin/rm -rf ./bin
 	@echo "*** Cross Compiling ...."
-	go-xbuild-go -build-args '$(BUILD_OPTIONS) $(LDFLAGS)'
+	go-xbuild-go -build-args '$(BUILD_OPTIONS) $(LDFLAGS)' \
+		-additional-files $(MAN_PAGE)
 
-doc: gen_files
+doc: gen_files 
 	@echo "*** Generating README.md with TOC ..."
 	@touch $(README)
 	@chmod 600 $(README)
 	$(MARKDOWN_TOC_PROG) -i $(MAIN_MD) -o $(README) --glossary ${GLOSSARY_FILE} -f
 	@chmod 444 $(README)
 	$(MARKDOWN_TOC_PROG) -no-credit -i docs/ChangeLog.md -o ./ChangeLog.md --glossary ${GLOSSARY_FILE} -f
+
+man_page:
+	pandoc README.md -s -t man \
+  -V title="ssl-tls-verify" \
+  -V section="1" \
+  -V header="User Commands" \
+  -o $(MAN_PAGE)
 
 
 gen_files: 

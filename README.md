@@ -306,7 +306,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/03 18:24:45 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “muquit.com” certificate is not standards compliant
+2025/10/03 19:54:40 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -332,17 +332,17 @@ Negotiated Protocol:
 ------------------------------------------------------------
 SERVER CERTIFICATE #1 (Leaf Certificate)
 ------------------------------------------------------------
-Subject:               CN=muquit.com,OU=muquit.com,O=muquit.com,L=Exton,ST=Pennsylvania,C=US,1.2.840.113549.1.9.1=#0c106d757175697440676d61696c2e636f6d
-Issuer:                CN=muquit.com,OU=muquit.com,O=muquit.com,L=Exton,ST=Pennsylvania,C=US,1.2.840.113549.1.9.1=#0c106d757175697440676d61696c2e636f6d
-Serial Number:         444142035122249765541056490409489010676599673739
+Subject:               CN=example.com,OU=example.com,O=Fo Bar LLC,L=Foo Bar,ST=Example,C=AU,1.2.840.113549.1.9.1=#0c106a646f65406578616d706c652e636f6d
+Issuer:                CN=example.com,OU=example.com,O=Fo Bar LLC,L=Foo Bar,ST=Example,C=AU,1.2.840.113549.1.9.1=#0c106a646f65406578616d706c652e636f6d
+Serial Number:         454408322901924448778008546212275614144524718803
 Version:               3
-Valid From:            2025-09-11 20:16:43 UTC
-Valid Until:           2035-09-09 20:16:43 UTC
-Status:                ✅ Valid (3627 days remaining)
+Valid From:            2025-09-27 18:16:21 UTC
+Valid Until:           2035-09-25 18:16:21 UTC
+Status:                ✅ Valid (3643 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
-SHA-1 Fingerprint:     50:0D:BB:43:39:B1:4B:69:2A:FF:CF:CC:CB:B0:52:AB:0C:F7:36:A0
-SHA-256 Fingerprint:   69:69:5C:CF:90:E7:87:30:23:EB:A4:BF:D6:73:FC:02:B0:55:2C:42:1D:F5:22:E4:6A:6C:35:D2:3E:BB:DD:25
+SHA-1 Fingerprint:     D7:4B:21:59:30:4C:84:B0:7C:5D:2E:80:15:66:32:88:7D:62:65:BB
+SHA-256 Fingerprint:   43:B8:D4:CF:36:CF:3D:B7:6A:12:06:C2:74:C8:8B:A0:D4:CE:8A:AD:7B:6C:A5:1C:C8:6D:2B:DB:D5:A9:13:8F
 Certificate Authority: Yes
 Direct TLS connection successful!
 ```
@@ -356,8 +356,8 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bb53be63sm50575036d6.19 - gsmtp
-EHLO response: 250-smtp.gmail.com at your service, [xxx.xxx.xxx.xxx]
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878be61fb57sm51951706d6.62 - gsmtp
+EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
 250-STARTTLS
@@ -741,8 +741,8 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bb53e2c5sm48888246d6.25 - gsmtp
-EHLO response: 250-smtp.gmail.com at your service, [xxx.xxx.xxx.xxx]
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-87779799145sm541433785a.56 - gsmtp
+EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
 250-STARTTLS
