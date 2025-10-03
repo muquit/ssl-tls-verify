@@ -40,7 +40,8 @@ There was a lingering bug in [mailsend-go](https://github.com/muquit/mailsend-go
 I was not getting time to look at the code and figure out the issue, so I asked [Claude AI Sonnet 4](https://claude.ai) to
 write a simple CLI tool in [go](https://go.dev/) to verify certificates from connection. Hence, `ssl-tls-verify` was born.
 After creating this tool, I realized I had missed `ServerName` in `tls.Config`.
-I also love this tool, it's much nicer than openssl with its human-readable output,
+
+I also love this tool now, it's much nicer than openssl with its human-readable output,
 clear certificate chain display, and intuitive formatting. What started as a debugging
 utility has become my go-to tool for SSL/TLS certificate inspection. 
 
@@ -195,7 +196,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/02 20:43:01 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/02 20:43:48 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -245,7 +246,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55a34c6e5sm28704181cf.6 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55a34c706sm28883201cf.8 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
