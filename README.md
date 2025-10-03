@@ -4,7 +4,7 @@
   - [Synopsis](#synopsis)
   - [Latest Version (v1.0.1)](#latest-version-v101)
   - [Installation](#installation)
-    - [Download pre-compiled bianries](#download-pre-compiled-bianries)
+    - [Download pre-compiled binaries](#download-pre-compiled-binaries)
     - [Build from source](#build-from-source)
     - [Install directly](#install-directly)
   - [Examples](#examples)
@@ -73,7 +73,7 @@ Please look at [ChangeLog](ChangeLog.md) for what has changed in the current ver
 
 ## Installation
 
-### Download pre-compiled bianries
+### Download pre-compiled binaries
 
 Please download pre-compiled binaries from [Releases](https://github.com/muquit/ssl-tls-verify/releases) page
 
@@ -199,7 +199,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/02 22:17:17 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/02 22:17:49 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -249,7 +249,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bd785963sm28393576d6.35 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bb446cffsm28583096d6.20 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME

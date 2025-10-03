@@ -1,6 +1,6 @@
 ## Installation
 
-### Download pre-compiled bianries
+### Download pre-compiled binaries
 
 Please download pre-compiled binaries from @RELEASES@ page
 
