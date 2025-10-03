@@ -38,7 +38,7 @@ If you have any question, request or suggestion, please enter it in the
 There was a lingering bug in [mailsend-go](https://github.com/muquit/mailsend-go) that `-verifyCert` was broken (Bug
         #71)
 I was not getting time to look at the code and figure out the issue, so I asked [Claude AI Sonnet 4](https://claude.ai) to
-write a simple CLI tool to verify certificates with optional verification. Hence, `ssl-tls-verify` was born.
+write a simple CLI tool in [go](https://go.dev/) to verify certificates from connection. Hence, `ssl-tls-verify` was born.
 After creating this tool, I realized I had missed `ServerName` in `tls.Config`.
 I also love this tool, it's much nicer than openssl with its human-readable output,
 clear certificate chain display, and intuitive formatting. What started as a debugging
@@ -176,7 +176,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (847 days remaining)
+Status:                ✅ Valid (846 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -195,7 +195,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/02 11:59:28 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/02 20:43:01 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -227,7 +227,7 @@ Serial Number:         454408322901924448778008546212275614144524718803
 Version:               3
 Valid From:            2025-09-27 18:16:21 UTC
 Valid Until:           2035-09-25 18:16:21 UTC
-Status:                ✅ Valid (3645 days remaining)
+Status:                ✅ Valid (3644 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 SHA-1 Fingerprint:     D7:4B:21:59:30:4C:84:B0:7C:5D:2E:80:15:66:32:88:7D:62:65:BB
@@ -245,7 +245,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bd87edf2sm21172506d6.33 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55a34c6e5sm28704181cf.6 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -314,7 +314,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (847 days remaining)
+Status:                ✅ Valid (846 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
