@@ -6,7 +6,6 @@ LDFLAGS := -ldflags "-w -s -X 'github.com/muquit/ssl-tls-verify/pkg/version.Vers
 BUILD_OPTIONS = -trimpath
 MARKDOWN_TOC_PROG=markdown-toc-go
 GLOSSARY_FILE=./docs/glossary.txt
-BADGEF=./docs/badges.md
 MAIN_MD=./docs/main.md
 
 
