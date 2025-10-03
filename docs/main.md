@@ -1,6 +1,7 @@
 @[:markdown](intro.md)
 @[:markdown](background.md)
-@[:markdown](synopsis.txt)
+@[:markdown](features.md)
+@[:markdown](synopsis.md)
 @[:markdown](version.md)
 @[:markdown](install.md)
 @[:markdown](examples.md)

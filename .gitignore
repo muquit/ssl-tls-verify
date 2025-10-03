@@ -1,2 +1,5 @@
+*.pem
+*.der
+*.crt
 /bin
 /ssl-tls-verify
