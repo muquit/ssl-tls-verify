@@ -1,6 +1,6 @@
 # Release v1.0.2
 
-- Added toptions to save certificates from connection and display content of
+- Added options to save certificates from connection and display content of
 certificate files.
 
 Please look at [ChangeLog](ChangeLog.md) for what has changed in the current version.
@@ -20,7 +20,7 @@ ssl-tls-verify-v1.0.2-raspberry-pi.d.tar.gz: OK
 ssl-tls-verify-v1.0.2-raspberry-pi-jessie.d.tar.gz: OK
 ```
 
-Sample content of binary archives is shown below. After extracting, copy the
+Sample content of binary archives is shown below. After extracting, copy/rename the
 binary somewhere in your PATH.
 
 ```bash
@@ -49,7 +49,7 @@ Archive:  ssl-tls-verify-v1.0.2-windows-amd64.d.zip
 ## Extract (unzip or untar)
 Example:
 ```bash
-tar -xvf ssl-tls-verify-v1.0.2-linux-amd64.d.tar.gz
+➤ tar -xvf ssl-tls-verify-v1.0.2-linux-amd64.d.tar.gz
 x ssl-tls-verify-v1.0.2-linux-amd64.d/LICENSE
 x ssl-tls-verify-v1.0.2-linux-amd64.d/README.md
 x ssl-tls-verify-v1.0.2-linux-amd64.d/platforms.txt
@@ -59,11 +59,14 @@ x ssl-tls-verify-v1.0.2-linux-amd64.d/ssl-tls-verify.1
 ```bash
 ➤ sudo /bin/cp ssl-tls-verify-v1.0.2-linux-amd64.d/ssl-tls-verify-v1.0.2-linux-amd64 \
      /usr/local/bin/ssl-tls-verify
+
 ➤ sudo cp cp ssl-tls-verify-v1.0.2-linux-amd64.d/ssl-tls-verify.1 \
         /usr/local/share/man/man1/
+
 ➤ ssl-tls-verify -version
 ssl-tls-verify v1.0.2
 https://github.com/muquit/ssl-tls-verify
+
 ➤ man ssl-tls-verify
 
 ```

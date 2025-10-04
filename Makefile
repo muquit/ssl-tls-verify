@@ -16,6 +16,11 @@ build:
 	@echo "Compiling ..."
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY)
 
+# Linux/Mac
+install: build doc man_page
+	sudo cp $(BINARY) /usr/local/bin
+	sudo cp $(MAN_PAGE) /usr/local/share/man/man1
+
 build_all:
 	@/bin/rm -rf ./bin
 	@echo "*** Cross Compiling ...."
