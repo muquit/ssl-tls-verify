@@ -85,7 +85,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/03 20:54:20 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/03 21:23:22 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -135,7 +135,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-877711296b6sm579493185a.14 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55d6b3017sm58931651cf.45 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -339,7 +339,7 @@ Certificate Authority: No
 ```
 #### Save to stdout and pipe to other tools e.g. openssl 
 ```
-./ssl-tls-verify --host google.com --save pem | openssl x509 -text
+./ssl-tls-verify --host google.com --save pem | openssl x509 -text -noout
 ```
 ```bash
 Certificate:
@@ -428,85 +428,6 @@ Certificate:
         c8:a1:a3:4a:5d:1b:61:3e:ac:f7:36:8f:e9:e8:64:db:4d:a4:
         9a:a4:31:76:e2:48:17:e9:b1:70:ed:63:73:67:c3:6e:bb:a7:
         fc:e2:01:81
------BEGIN CERTIFICATE-----
-MIIORzCCDS+gAwIBAgIQfWlCIKquEsUKyldxEbXMeDANBgkqhkiG9w0BAQsFADA7
-MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMQww
-CgYDVQQDEwNXUjIwHhcNMjUwOTE1MDgzNDE4WhcNMjUxMjA4MDgzNDE3WjAXMRUw
-EwYDVQQDDAwqLmdvb2dsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAT9
-yAGd4SjYidOFp5tRU/V6wIxfnmP3KgbcReB5jiT6IfeY9s4Y3YncQHKr10Nrfivt
-8kM4Iop60AnWcEOEZnXAo4IMNDCCDDAwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQM
-MAoGCCsGAQUFBwMBMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFI9ihwaoIKgwJ3/3
-LdYyyHcNebyTMB8GA1UdIwQYMBaAFN4bHu15FdQ+NyTDIbvsNDltQrIwMFgGCCsG
-AQUFBwEBBEwwSjAhBggrBgEFBQcwAYYVaHR0cDovL28ucGtpLmdvb2cvd3IyMCUG
-CCsGAQUFBzAChhlodHRwOi8vaS5wa2kuZ29vZy93cjIuY3J0MIIKCwYDVR0RBIIK
-AjCCCf6CDCouZ29vZ2xlLmNvbYIWKi5hcHBlbmdpbmUuZ29vZ2xlLmNvbYIJKi5i
-ZG4uZGV2ghUqLm9yaWdpbi10ZXN0LmJkbi5kZXaCEiouY2xvdWQuZ29vZ2xlLmNv
-bYIYKi5jcm93ZHNvdXJjZS5nb29nbGUuY29tghgqLmRhdGFjb21wdXRlLmdvb2ds
-ZS5jb22CCyouZ29vZ2xlLmNhggsqLmdvb2dsZS5jbIIOKi5nb29nbGUuY28uaW6C
-DiouZ29vZ2xlLmNvLmpwgg4qLmdvb2dsZS5jby51a4IPKi5nb29nbGUuY29tLmFy
-gg8qLmdvb2dsZS5jb20uYXWCDyouZ29vZ2xlLmNvbS5icoIPKi5nb29nbGUuY29t
-LmNvgg8qLmdvb2dsZS5jb20ubXiCDyouZ29vZ2xlLmNvbS50coIPKi5nb29nbGUu
-Y29tLnZuggsqLmdvb2dsZS5kZYILKi5nb29nbGUuZXOCCyouZ29vZ2xlLmZyggsq
-Lmdvb2dsZS5odYILKi5nb29nbGUuaXSCCyouZ29vZ2xlLm5sggsqLmdvb2dsZS5w
-bIILKi5nb29nbGUucHSCDyouZ29vZ2xlYXBpcy5jboIRKi5nb29nbGV2aWRlby5j
-b22CDCouZ3N0YXRpYy5jboIQKi5nc3RhdGljLWNuLmNvbYIPZ29vZ2xlY25hcHBz
-LmNughEqLmdvb2dsZWNuYXBwcy5jboIRZ29vZ2xlYXBwcy1jbi5jb22CEyouZ29v
-Z2xlYXBwcy1jbi5jb22CDGdrZWNuYXBwcy5jboIOKi5na2VjbmFwcHMuY26CEmdv
-b2dsZWRvd25sb2Fkcy5jboIUKi5nb29nbGVkb3dubG9hZHMuY26CEHJlY2FwdGNo
-YS5uZXQuY26CEioucmVjYXB0Y2hhLm5ldC5jboIQcmVjYXB0Y2hhLWNuLm5ldIIS
-Ki5yZWNhcHRjaGEtY24ubmV0ggt3aWRldmluZS5jboINKi53aWRldmluZS5jboIR
-YW1wcHJvamVjdC5vcmcuY26CEyouYW1wcHJvamVjdC5vcmcuY26CEWFtcHByb2pl
-Y3QubmV0LmNughMqLmFtcHByb2plY3QubmV0LmNughdnb29nbGUtYW5hbHl0aWNz
-LWNuLmNvbYIZKi5nb29nbGUtYW5hbHl0aWNzLWNuLmNvbYIXZ29vZ2xlYWRzZXJ2
-aWNlcy1jbi5jb22CGSouZ29vZ2xlYWRzZXJ2aWNlcy1jbi5jb22CEWdvb2dsZXZh
-ZHMtY24uY29tghMqLmdvb2dsZXZhZHMtY24uY29tghFnb29nbGVhcGlzLWNuLmNv
-bYITKi5nb29nbGVhcGlzLWNuLmNvbYIVZ29vZ2xlb3B0aW1pemUtY24uY29tghcq
-Lmdvb2dsZW9wdGltaXplLWNuLmNvbYISZG91YmxlY2xpY2stY24ubmV0ghQqLmRv
-dWJsZWNsaWNrLWNuLm5ldIIYKi5mbHMuZG91YmxlY2xpY2stY24ubmV0ghYqLmcu
-ZG91YmxlY2xpY2stY24ubmV0gg5kb3VibGVjbGljay5jboIQKi5kb3VibGVjbGlj
-ay5jboIUKi5mbHMuZG91YmxlY2xpY2suY26CEiouZy5kb3VibGVjbGljay5jboIR
-ZGFydHNlYXJjaC1jbi5uZXSCEyouZGFydHNlYXJjaC1jbi5uZXSCHWdvb2dsZXRy
-YXZlbGFkc2VydmljZXMtY24uY29tgh8qLmdvb2dsZXRyYXZlbGFkc2VydmljZXMt
-Y24uY29tghhnb29nbGV0YWdzZXJ2aWNlcy1jbi5jb22CGiouZ29vZ2xldGFnc2Vy
-dmljZXMtY24uY29tghdnb29nbGV0YWdtYW5hZ2VyLWNuLmNvbYIZKi5nb29nbGV0
-YWdtYW5hZ2VyLWNuLmNvbYIYZ29vZ2xlc3luZGljYXRpb24tY24uY29tghoqLmdv
-b2dsZXN5bmRpY2F0aW9uLWNuLmNvbYIkKi5zYWZlZnJhbWUuZ29vZ2xlc3luZGlj
-YXRpb24tY24uY29tghZhcHAtbWVhc3VyZW1lbnQtY24uY29tghgqLmFwcC1tZWFz
-dXJlbWVudC1jbi5jb22CC2d2dDEtY24uY29tgg0qLmd2dDEtY24uY29tggtndnQy
-LWNuLmNvbYINKi5ndnQyLWNuLmNvbYILMm1kbi1jbi5uZXSCDSouMm1kbi1jbi5u
-ZXSCFGdvb2dsZWZsaWdodHMtY24ubmV0ghYqLmdvb2dsZWZsaWdodHMtY24ubmV0
-ggxhZG1vYi1jbi5jb22CDiouYWRtb2ItY24uY29tghkqLmdlbWluaS5jbG91ZC5n
-b29nbGUuY29tghRnb29nbGVzYW5kYm94LWNuLmNvbYIWKi5nb29nbGVzYW5kYm94
-LWNuLmNvbYIeKi5zYWZlbnVwLmdvb2dsZXNhbmRib3gtY24uY29tgg0qLmdzdGF0
-aWMuY29tghQqLm1ldHJpYy5nc3RhdGljLmNvbYIKKi5ndnQxLmNvbYIRKi5nY3Bj
-ZG4uZ3Z0MS5jb22CCiouZ3Z0Mi5jb22CDiouZ2NwLmd2dDIuY29tghAqLnVybC5n
-b29nbGUuY29tghYqLnlvdXR1YmUtbm9jb29raWUuY29tggsqLnl0aW1nLmNvbYIK
-YWkuYW5kcm9pZIILYW5kcm9pZC5jb22CDSouYW5kcm9pZC5jb22CEyouZmxhc2gu
-YW5kcm9pZC5jb22CBGcuY26CBiouZy5jboIEZy5jb4IGKi5nLmNvggZnb28uZ2yC
-Cnd3dy5nb28uZ2yCFGdvb2dsZS1hbmFseXRpY3MuY29tghYqLmdvb2dsZS1hbmFs
-eXRpY3MuY29tggpnb29nbGUuY29tghJnb29nbGVjb21tZXJjZS5jb22CFCouZ29v
-Z2xlY29tbWVyY2UuY29tgghnZ3BodC5jboIKKi5nZ3BodC5jboIKdXJjaGluLmNv
-bYIMKi51cmNoaW4uY29tggh5b3V0dS5iZYILeW91dHViZS5jb22CDSoueW91dHVi
-ZS5jb22CEW11c2ljLnlvdXR1YmUuY29tghMqLm11c2ljLnlvdXR1YmUuY29tghR5
-b3V0dWJlZWR1Y2F0aW9uLmNvbYIWKi55b3V0dWJlZWR1Y2F0aW9uLmNvbYIPeW91
-dHViZWtpZHMuY29tghEqLnlvdXR1YmVraWRzLmNvbYIFeXQuYmWCByoueXQuYmWC
-GmFuZHJvaWQuY2xpZW50cy5nb29nbGUuY29tghMqLmFuZHJvaWQuZ29vZ2xlLmNu
-ghIqLmNocm9tZS5nb29nbGUuY26CFiouZGV2ZWxvcGVycy5nb29nbGUuY26CFSou
-YWlzdHVkaW8uZ29vZ2xlLmNvbTATBgNVHSAEDDAKMAgGBmeBDAECATA2BgNVHR8E
-LzAtMCugKaAnhiVodHRwOi8vYy5wa2kuZ29vZy93cjIvOVVWYk4wdzVFNlkuY3Js
-MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHUA3dzKNJXX4RYF55Uy+sef+D0cUN/b
-ADoUEnYKLKy7yCoAAAGZTLmrVwAABAMARjBEAiAgSTJjtkt9QnklVdQRBxoEV6If
-6v6PnYUhgrqi40AdZAIgFq01UJnMrtpmzJDGaTb/tCm2laCysDbNylB+fkXA8HIA
-dgDM+w9qhXEJZf6Vm1PO6bJ8IumFXA2XjbapflTA/kwNsAAAAZlMuauzAAAEAwBH
-MEUCIEovWXwIc2KIqM0Yg2bKX4XiGFMIzZH+e8iq7s26jw3LAiEA4/13WbN8IbbQ
-yaLEbBZ5j4w01T41Hzu3ryr1qsB8eYAwDQYJKoZIhvcNAQELBQADggEBAE3kSLNv
-/oNrkGzTqRDstzgUuEO34y99eAmLslPLzr0doYE9BH3xPYsQPR7cG9+9iAzoJyHD
-LMVS4384wXHFHudA3bQk5VoRkSNLhl6q+mGWDQ2KLkpaDpgsNKBhQNmWOFm6QbgH
-Mxj1apM9NKBRGUKN6GcQ3yIZBTI/yX7+uBlNhGWPZKDKK3vo4f4EL9VnHWvdd9nT
-a77ubiCncskqIFrL0o1/4oOOWdi7relxmcQH2Ph68npxmv+83rfnZ/qxhldyYr7Z
-UHq+drKW9qNtO7MulyvCLScj78iho0pdG2E+rPc2j+noZNtNpJqkMXbiSBfpsXDt
-Y3Nnw267p/ziAYE=
------END CERTIFICATE-----
 ```
 #### Saving certs works with StartTLSS too
 ```
@@ -520,7 +441,7 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bdf53343sm51549456d6.54 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-8777892ef75sm584262385a.31 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME

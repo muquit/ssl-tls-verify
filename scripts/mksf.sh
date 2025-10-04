@@ -92,10 +92,10 @@ echo '```' >> ${SAMPLE}
 
 echo "#### Save to stdout and pipe to other tools e.g. openssl " >> ${SAMPLE}
 echo '```' >> ${SAMPLE}
-echo "${BINARY} --host google.com --save pem | openssl x509 -text" >> ${SAMPLE} 
+echo "${BINARY} --host google.com --save pem | openssl x509 -text -noout" >> ${SAMPLE} 
 echo '```' >> ${SAMPLE}
 echo '```bash' >> ${SAMPLE}
-${BINARY} --host google.com --save pem | openssl x509 -text >> ${SAMPLE} 2>&1
+${BINARY} --host google.com --save pem | openssl x509 -text -noout >> ${SAMPLE} 2>&1
 echo '```' >> ${SAMPLE}
 
 echo "#### Saving certs works with StartTLSS too" >> ${SAMPLE}
