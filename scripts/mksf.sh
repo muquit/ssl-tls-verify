@@ -103,7 +103,8 @@ echo '```' >> ${SAMPLE}
 
 echo "#### Saving certs works with StartTLSS too" >> ${SAMPLE}
 echo '```' >> ${SAMPLE}
-echo "${BINARY} --host smtp.gmail.com --port 587 --starttls --save pem --output smtp-certs.pem" >> ${SAMPLE}
+echo "${BINARY} --host smtp.gmail.com --port 587 \
+    --starttls --save pem --output smtp-certs.pem" >> ${SAMPLE}
 echo '```' >> ${SAMPLE}
 echo '```bash' >> ${SAMPLE}
 ${BINARY} --host smtp.gmail.com --port 587 --starttls --save pem --output smtp-certs.pem >> ${SAMPLE} 2>&1
