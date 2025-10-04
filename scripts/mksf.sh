@@ -82,7 +82,7 @@ echo '```' >> ${SAMPLE}
 
 echo "#### Save leaf certificate in DER format" >> ${SAMPLE}
 echo '```bash' >> ${SAMPLE}
-echo "${BINARY} --host google.com --save der --output ./cert.der" ${SAMPLE}
+echo "${BINARY} --host google.com --save der --output ./cert.der" >> ${SAMPLE}
 echo '```' >> ${SAMPLE}
 echo '```bash' >> ${SAMPLE}
 ${BINARY} --host google.com --save der --output ./cert.der >> ${SAMPLE} 2>&1
