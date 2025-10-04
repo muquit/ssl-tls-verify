@@ -320,7 +320,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/03 21:30:36 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/03 21:31:00 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -370,7 +370,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55a34b6bfsm58037581cf.7 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-87772460cafsm570170585a.24 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -669,7 +669,8 @@ Certificate:
 ```
 #### Saving certs works with StartTLSS too
 ```
-./ssl-tls-verify --host smtp.gmail.com --port 587     --starttls --save pem --output smtp-certs.pem
+./ssl-tls-verify --host smtp.gmail.com --port 587 \
+    --starttls --save pem --output smtp-certs.pem
 ```
 ```bash
 Connecting to smtp.gmail.com:587
@@ -679,7 +680,7 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-87771129f4csm589806785a.12 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bb4465cesm52213246d6.17 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
