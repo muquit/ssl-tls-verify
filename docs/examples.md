@@ -1,4 +1,5 @@
 ## Examples
+### Commands
 
 Test HTTPS connection with certificate verification:
 ```bash

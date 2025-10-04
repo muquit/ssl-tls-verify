@@ -14,6 +14,7 @@
     - [Build from source](#build-from-source)
     - [Install directly](#install-directly)
   - [Examples](#examples)
+    - [Commands](#commands)
     - [Sample output](#sample-output)
       - [google.com HTTPS port 443](#googlecom-https-port-443)
       - [Server using self signed certificate](#server-using-self-signed-certificate)
@@ -185,6 +186,7 @@ go install github.com/muquit/ssl-tls-verify@latest
 ```
 
 ## Examples
+### Commands
 
 Test HTTPS connection with certificate verification:
 ```bash
@@ -318,7 +320,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/03 21:23:22 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/03 21:25:22 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -368,7 +370,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55d6b3017sm58931651cf.45 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bdf5317bsm53506366d6.47 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -674,7 +676,7 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-8777892ef75sm584262385a.31 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55cfd377asm54917321cf.34 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
