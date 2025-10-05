@@ -7,7 +7,10 @@
 - No code logic changed, code is re-factored from one giant main.go, so that
 the code be re-used in other projects.
 
-(Oct-04-2025)
+- Add examples on how to use `ssl-tls-verify` as a libary
+- Added API reference
+
+(Oct-05-2025)
 
 # v1.0.2
 - Added the following new options:
