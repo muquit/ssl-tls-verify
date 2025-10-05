@@ -23,7 +23,7 @@ install: build doc man_page
 
 build_all:
 	@/bin/rm -rf ./bin
-	@echo "*** Cross Compiling ...."
+	@echo "*** Cross Compiling ..."
 	go-xbuild-go -build-args '$(BUILD_OPTIONS) $(LDFLAGS)' \
 		-additional-files $(MAN_PAGE)
 
@@ -42,6 +42,8 @@ man_page:
   -V header="User Commands" \
   -o $(MAN_PAGE)
 
+test:
+	go test ./pkg/utils/
 
 gen_files: 
 	@./scripts/mksf.sh

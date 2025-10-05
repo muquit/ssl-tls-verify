@@ -25,9 +25,15 @@ Save in PEM format:
 ./ssl-tls-verify --host google.com --save pem --output certs.pem
 ```
 
-Save in DER format:
+Save in DER format: 
 ```bash
 ./ssl-tls-verify --host google.com --save der --output cert.der
+```
+Note: only left cert is saved in cert.der. If you would like to get all the
+certs in DER format, you can convert the certs in pem file using openssl.
+Example:
+```bash
+openssl x509 -in certs.pem -outform DER -out certs.der
 ```
 
 Save in TEXT format (human-readable):

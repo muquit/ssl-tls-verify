@@ -28,7 +28,7 @@ Serial Number:         166700031870418575880302779524424518776
 Version:               3
 Valid From:            2025-09-15 08:34:18 UTC
 Valid Until:           2025-12-08 08:34:17 UTC
-Status:                ✅ Valid (65 days remaining)
+Status:                ✅ Valid (63 days remaining)
 DNS Names:             *.google.com, *.appengine.google.com, *.bdn.dev, *.origin-test.bdn.dev, *.cloud.google.com, *.crowdsource.google.com, *.datacompute.google.com, *.google.ca, *.google.cl, *.google.co.in, *.google.co.jp, *.google.co.uk, *.google.com.ar, *.google.com.au, *.google.com.br, *.google.com.co, *.google.com.mx, *.google.com.tr, *.google.com.vn, *.google.de, *.google.es, *.google.fr, *.google.hu, *.google.it, *.google.nl, *.google.pl, *.google.pt, *.googleapis.cn, *.googlevideo.com, *.gstatic.cn, *.gstatic-cn.com, googlecnapps.cn, *.googlecnapps.cn, googleapps-cn.com, *.googleapps-cn.com, gkecnapps.cn, *.gkecnapps.cn, googledownloads.cn, *.googledownloads.cn, recaptcha.net.cn, *.recaptcha.net.cn, recaptcha-cn.net, *.recaptcha-cn.net, widevine.cn, *.widevine.cn, ampproject.org.cn, *.ampproject.org.cn, ampproject.net.cn, *.ampproject.net.cn, google-analytics-cn.com, *.google-analytics-cn.com, googleadservices-cn.com, *.googleadservices-cn.com, googlevads-cn.com, *.googlevads-cn.com, googleapis-cn.com, *.googleapis-cn.com, googleoptimize-cn.com, *.googleoptimize-cn.com, doubleclick-cn.net, *.doubleclick-cn.net, *.fls.doubleclick-cn.net, *.g.doubleclick-cn.net, doubleclick.cn, *.doubleclick.cn, *.fls.doubleclick.cn, *.g.doubleclick.cn, dartsearch-cn.net, *.dartsearch-cn.net, googletraveladservices-cn.com, *.googletraveladservices-cn.com, googletagservices-cn.com, *.googletagservices-cn.com, googletagmanager-cn.com, *.googletagmanager-cn.com, googlesyndication-cn.com, *.googlesyndication-cn.com, *.safeframe.googlesyndication-cn.com, app-measurement-cn.com, *.app-measurement-cn.com, gvt1-cn.com, *.gvt1-cn.com, gvt2-cn.com, *.gvt2-cn.com, 2mdn-cn.net, *.2mdn-cn.net, googleflights-cn.net, *.googleflights-cn.net, admob-cn.com, *.admob-cn.com, *.gemini.cloud.google.com, googlesandbox-cn.com, *.googlesandbox-cn.com, *.safenup.googlesandbox-cn.com, *.gstatic.com, *.metric.gstatic.com, *.gvt1.com, *.gcpcdn.gvt1.com, *.gvt2.com, *.gcp.gvt2.com, *.url.google.com, *.youtube-nocookie.com, *.ytimg.com, ai.android, android.com, *.android.com, *.flash.android.com, g.cn, *.g.cn, g.co, *.g.co, goo.gl, www.goo.gl, google-analytics.com, *.google-analytics.com, google.com, googlecommerce.com, *.googlecommerce.com, ggpht.cn, *.ggpht.cn, urchin.com, *.urchin.com, youtu.be, youtube.com, *.youtube.com, music.youtube.com, *.music.youtube.com, youtubeeducation.com, *.youtubeeducation.com, youtubekids.com, *.youtubekids.com, yt.be, *.yt.be, android.clients.google.com, *.android.google.cn, *.chrome.google.cn, *.developers.google.cn, *.aistudio.google.com
 Public Key Algorithm:  ECDSA
 Signature Algorithm:   SHA256-RSA
@@ -47,7 +47,7 @@ Serial Number:         170058220837755766831192027518741805976
 Version:               3
 Valid From:            2023-12-13 09:00:00 UTC
 Valid Until:           2029-02-20 14:00:00 UTC
-Status:                ✅ Valid (1235 days remaining)
+Status:                ✅ Valid (1233 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -66,7 +66,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (845 days remaining)
+Status:                ✅ Valid (844 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -85,7 +85,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/03 21:31:00 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/05 13:56:25 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -117,7 +117,7 @@ Serial Number:         454408322901924448778008546212275614144524718803
 Version:               3
 Valid From:            2025-09-27 18:16:21 UTC
 Valid Until:           2035-09-25 18:16:21 UTC
-Status:                ✅ Valid (3643 days remaining)
+Status:                ✅ Valid (3642 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 SHA-1 Fingerprint:     D7:4B:21:59:30:4C:84:B0:7C:5D:2E:80:15:66:32:88:7D:62:65:BB
@@ -135,7 +135,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-87772460cafsm570170585a.24 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-877786508c0sm1043823585a.43 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -166,7 +166,7 @@ Serial Number:         198559767591087662403673263944902778968
 Version:               3
 Valid From:            2025-09-15 08:36:10 UTC
 Valid Until:           2025-12-08 08:36:09 UTC
-Status:                ✅ Valid (65 days remaining)
+Status:                ✅ Valid (63 days remaining)
 DNS Names:             smtp.gmail.com
 Public Key Algorithm:  ECDSA
 Signature Algorithm:   SHA256-RSA
@@ -185,7 +185,7 @@ Serial Number:         170058220837755766831192027518741805976
 Version:               3
 Valid From:            2023-12-13 09:00:00 UTC
 Valid Until:           2029-02-20 14:00:00 UTC
-Status:                ✅ Valid (1235 days remaining)
+Status:                ✅ Valid (1233 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -204,7 +204,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (845 days remaining)
+Status:                ✅ Valid (844 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -249,7 +249,7 @@ Serial Number:         166700031870418575880302779524424518776
 Version:               3
 Valid From:            2025-09-15 08:34:18 UTC
 Valid Until:           2025-12-08 08:34:17 UTC
-Status:                ✅ Valid (65 days remaining)
+Status:                ✅ Valid (63 days remaining)
 DNS Names:             *.google.com, *.appengine.google.com, *.bdn.dev, *.origin-test.bdn.dev, *.cloud.google.com, *.crowdsource.google.com, *.datacompute.google.com, *.google.ca, *.google.cl, *.google.co.in, *.google.co.jp, *.google.co.uk, *.google.com.ar, *.google.com.au, *.google.com.br, *.google.com.co, *.google.com.mx, *.google.com.tr, *.google.com.vn, *.google.de, *.google.es, *.google.fr, *.google.hu, *.google.it, *.google.nl, *.google.pl, *.google.pt, *.googleapis.cn, *.googlevideo.com, *.gstatic.cn, *.gstatic-cn.com, googlecnapps.cn, *.googlecnapps.cn, googleapps-cn.com, *.googleapps-cn.com, gkecnapps.cn, *.gkecnapps.cn, googledownloads.cn, *.googledownloads.cn, recaptcha.net.cn, *.recaptcha.net.cn, recaptcha-cn.net, *.recaptcha-cn.net, widevine.cn, *.widevine.cn, ampproject.org.cn, *.ampproject.org.cn, ampproject.net.cn, *.ampproject.net.cn, google-analytics-cn.com, *.google-analytics-cn.com, googleadservices-cn.com, *.googleadservices-cn.com, googlevads-cn.com, *.googlevads-cn.com, googleapis-cn.com, *.googleapis-cn.com, googleoptimize-cn.com, *.googleoptimize-cn.com, doubleclick-cn.net, *.doubleclick-cn.net, *.fls.doubleclick-cn.net, *.g.doubleclick-cn.net, doubleclick.cn, *.doubleclick.cn, *.fls.doubleclick.cn, *.g.doubleclick.cn, dartsearch-cn.net, *.dartsearch-cn.net, googletraveladservices-cn.com, *.googletraveladservices-cn.com, googletagservices-cn.com, *.googletagservices-cn.com, googletagmanager-cn.com, *.googletagmanager-cn.com, googlesyndication-cn.com, *.googlesyndication-cn.com, *.safeframe.googlesyndication-cn.com, app-measurement-cn.com, *.app-measurement-cn.com, gvt1-cn.com, *.gvt1-cn.com, gvt2-cn.com, *.gvt2-cn.com, 2mdn-cn.net, *.2mdn-cn.net, googleflights-cn.net, *.googleflights-cn.net, admob-cn.com, *.admob-cn.com, *.gemini.cloud.google.com, googlesandbox-cn.com, *.googlesandbox-cn.com, *.safenup.googlesandbox-cn.com, *.gstatic.com, *.metric.gstatic.com, *.gvt1.com, *.gcpcdn.gvt1.com, *.gvt2.com, *.gcp.gvt2.com, *.url.google.com, *.youtube-nocookie.com, *.ytimg.com, ai.android, android.com, *.android.com, *.flash.android.com, g.cn, *.g.cn, g.co, *.g.co, goo.gl, www.goo.gl, google-analytics.com, *.google-analytics.com, google.com, googlecommerce.com, *.googlecommerce.com, ggpht.cn, *.ggpht.cn, urchin.com, *.urchin.com, youtu.be, youtube.com, *.youtube.com, music.youtube.com, *.music.youtube.com, youtubeeducation.com, *.youtubeeducation.com, youtubekids.com, *.youtubekids.com, yt.be, *.yt.be, android.clients.google.com, *.android.google.cn, *.chrome.google.cn, *.developers.google.cn, *.aistudio.google.com
 Public Key Algorithm:  ECDSA
 Signature Algorithm:   SHA256-RSA
@@ -268,7 +268,7 @@ Serial Number:         170058220837755766831192027518741805976
 Version:               3
 Valid From:            2023-12-13 09:00:00 UTC
 Valid Until:           2029-02-20 14:00:00 UTC
-Status:                ✅ Valid (1235 days remaining)
+Status:                ✅ Valid (1233 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -287,7 +287,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (845 days remaining)
+Status:                ✅ Valid (844 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -330,7 +330,7 @@ Serial Number:         166700031870418575880302779524424518776
 Version:               3
 Valid From:            2025-09-15 08:34:18 UTC
 Valid Until:           2025-12-08 08:34:17 UTC
-Status:                ✅ Valid (65 days remaining)
+Status:                ✅ Valid (63 days remaining)
 DNS Names:             *.google.com, *.appengine.google.com, *.bdn.dev, *.origin-test.bdn.dev, *.cloud.google.com, *.crowdsource.google.com, *.datacompute.google.com, *.google.ca, *.google.cl, *.google.co.in, *.google.co.jp, *.google.co.uk, *.google.com.ar, *.google.com.au, *.google.com.br, *.google.com.co, *.google.com.mx, *.google.com.tr, *.google.com.vn, *.google.de, *.google.es, *.google.fr, *.google.hu, *.google.it, *.google.nl, *.google.pl, *.google.pt, *.googleapis.cn, *.googlevideo.com, *.gstatic.cn, *.gstatic-cn.com, googlecnapps.cn, *.googlecnapps.cn, googleapps-cn.com, *.googleapps-cn.com, gkecnapps.cn, *.gkecnapps.cn, googledownloads.cn, *.googledownloads.cn, recaptcha.net.cn, *.recaptcha.net.cn, recaptcha-cn.net, *.recaptcha-cn.net, widevine.cn, *.widevine.cn, ampproject.org.cn, *.ampproject.org.cn, ampproject.net.cn, *.ampproject.net.cn, google-analytics-cn.com, *.google-analytics-cn.com, googleadservices-cn.com, *.googleadservices-cn.com, googlevads-cn.com, *.googlevads-cn.com, googleapis-cn.com, *.googleapis-cn.com, googleoptimize-cn.com, *.googleoptimize-cn.com, doubleclick-cn.net, *.doubleclick-cn.net, *.fls.doubleclick-cn.net, *.g.doubleclick-cn.net, doubleclick.cn, *.doubleclick.cn, *.fls.doubleclick.cn, *.g.doubleclick.cn, dartsearch-cn.net, *.dartsearch-cn.net, googletraveladservices-cn.com, *.googletraveladservices-cn.com, googletagservices-cn.com, *.googletagservices-cn.com, googletagmanager-cn.com, *.googletagmanager-cn.com, googlesyndication-cn.com, *.googlesyndication-cn.com, *.safeframe.googlesyndication-cn.com, app-measurement-cn.com, *.app-measurement-cn.com, gvt1-cn.com, *.gvt1-cn.com, gvt2-cn.com, *.gvt2-cn.com, 2mdn-cn.net, *.2mdn-cn.net, googleflights-cn.net, *.googleflights-cn.net, admob-cn.com, *.admob-cn.com, *.gemini.cloud.google.com, googlesandbox-cn.com, *.googlesandbox-cn.com, *.safenup.googlesandbox-cn.com, *.gstatic.com, *.metric.gstatic.com, *.gvt1.com, *.gcpcdn.gvt1.com, *.gvt2.com, *.gcp.gvt2.com, *.url.google.com, *.youtube-nocookie.com, *.ytimg.com, ai.android, android.com, *.android.com, *.flash.android.com, g.cn, *.g.cn, g.co, *.g.co, goo.gl, www.goo.gl, google-analytics.com, *.google-analytics.com, google.com, googlecommerce.com, *.googlecommerce.com, ggpht.cn, *.ggpht.cn, urchin.com, *.urchin.com, youtu.be, youtube.com, *.youtube.com, music.youtube.com, *.music.youtube.com, youtubeeducation.com, *.youtubeeducation.com, youtubekids.com, *.youtubekids.com, yt.be, *.yt.be, android.clients.google.com, *.android.google.cn, *.chrome.google.cn, *.developers.google.cn, *.aistudio.google.com
 Public Key Algorithm:  ECDSA
 Signature Algorithm:   SHA256-RSA
@@ -445,7 +445,7 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bb4465cesm52213246d6.17 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55cadcecdsm106901561cf.23 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME

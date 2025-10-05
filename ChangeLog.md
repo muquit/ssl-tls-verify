@@ -1,6 +1,13 @@
 ## Table Of Contents
+- [v1.0.3](#v103)
 - [v1.0.2](#v102)
 - [v1.0.1](#v101)
+
+# v1.0.3
+- No code logic changed, code is re-factored from one giant main.go, so that
+the code be re-used in other projects.
+
+(Oct-04-2025)
 
 # v1.0.2
 - Added the following new options:

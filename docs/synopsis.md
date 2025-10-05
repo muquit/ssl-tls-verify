@@ -28,7 +28,7 @@ Usage:
 Save Formats:
   pem   - PEM encoded certificates (Base64 with headers)
   der   - DER encoded certificates (binary format)
-  text  - Human-readable text format with full details
+  text  - Human-readable text format with details
 
 Examples:
   Test SSL/TLS connection:
