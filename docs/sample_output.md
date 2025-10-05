@@ -85,7 +85,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/05 13:56:25 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/05 14:33:38 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -117,7 +117,7 @@ Serial Number:         454408322901924448778008546212275614144524718803
 Version:               3
 Valid From:            2025-09-27 18:16:21 UTC
 Valid Until:           2035-09-25 18:16:21 UTC
-Status:                ✅ Valid (3642 days remaining)
+Status:                ✅ Valid (3641 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 SHA-1 Fingerprint:     D7:4B:21:59:30:4C:84:B0:7C:5D:2E:80:15:66:32:88:7D:62:65:BB
@@ -135,7 +135,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-877786508c0sm1043823585a.43 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP af79cd13be357-8777112965dsm1051305785a.11 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -445,7 +445,7 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55cadcecdsm106901561cf.23 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bdf533a0sm101864116d6.58 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME

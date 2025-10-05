@@ -1,6 +1,6 @@
 ## Synopsis
 ```
-ssl-tls-verify v1.0.2
+ssl-tls-verify v1.0.3
 https://github.com/muquit/ssl-tls-verify
 A cross-platform command line tool to test and verify SSL/TLS connections
 and display certificate files in a human readable format
