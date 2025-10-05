@@ -68,6 +68,27 @@
       - [Initialize go module](#initialize-go-module)
       - [Build](#build)
       - [Run](#run)
+  - [API Reference](#api-reference)
+    - [`pkg/certificate`](#pkgcertificate)
+      - [`ParseFile(filename string) ([]*x509.Certificate, string, error)`](#parsefilefilename-string-x509certificate-string-error)
+      - [`ParsePEMCertificates(data []byte) ([]*x509.Certificate, error)`](#parsepemcertificatesdata-byte-x509certificate-error)
+      - [`Display(certs []*x509.Certificate)`](#displaycerts-x509certificate)
+      - [`PrintDetails(cert *x509.Certificate)`](#printdetailscert-x509certificate)
+      - [`PrintDetailsToWriter(cert *x509.Certificate, output io.Writer)`](#printdetailstowritercert-x509certificate-output-iowriter)
+      - [`FormatFingerprint(certRaw []byte, algorithm string) string`](#formatfingerprintcertraw-byte-algorithm-string-string)
+      - [`Save(certs []*x509.Certificate, config SaveConfig) error`](#savecerts-x509certificate-config-saveconfig-error)
+      - [`SavePEM(certs []*x509.Certificate, output io.Writer) error`](#savepemcerts-x509certificate-output-iowriter-error)
+      - [`SaveDER(certs []*x509.Certificate, output io.Writer) error`](#savedercerts-x509certificate-output-iowriter-error)
+      - [`SaveText(certs []*x509.Certificate, output io.Writer) error`](#savetextcerts-x509certificate-output-iowriter-error)
+    - [`pkg/connection`](#pkgconnection)
+      - [`TestDirectTLS(config TLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`](#testdirecttlsconfig-tlsconfig-x509certificate-tlsconnectionstate-error)
+      - [`TestStartTLS(config StartTLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`](#teststarttlsconfig-starttlsconfig-x509certificate-tlsconnectionstate-error)
+      - [`PrintTLSInfo(state tls.ConnectionState)`](#printtlsinfostate-tlsconnectionstate)
+    - [`pkg/utils`](#pkgutils)
+      - [`MaskIPAddresses(text string) string`](#maskipaddressestext-string-string)
+      - [`MaskIPSlice(addresses []string) []string`](#maskipsliceaddresses-string-string)
+    - [Best Practices](#best-practices)
+    - [Error Handling](#error-handling)
   - [License](#license)
   - [Authors](#authors)
 
@@ -368,7 +389,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/05 16:14:24 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/05 16:30:17 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -418,7 +439,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55cfd377asm100731191cf.34 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55c9e6e12sm100902911cf.25 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -728,7 +749,7 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bb53b8absm95725996d6.22 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bd7867b0sm96666026d6.37 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -1007,8 +1028,8 @@ go build .
 
 ```bash
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bae60582sm97362196d6.7 - gsmtp
-EHLO response: 250-smtp.gmail.com at your service, [2600:4040:7800:5500:d0e5:435d:ef7c:6518]
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55aa44901sm96789721cf.18 - gsmtp
+EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
 250-STARTTLS
@@ -1409,6 +1430,103 @@ SHA-1 Fingerprint:   33:09:D4:D3:61:83:44:73:CF:04:5A:44:53:2E:B5:36:64:BB:FC:7F
 SHA-256 Fingerprint: 86:F0:16:7D:8B:24:BC:17:6C:2B:06:E6:05:A6:33:43:10:A0:61:A6:BA:81:FB:58:ED:0A:DC:0B:AE:5D:08:C6
 ```
 etc.
+
+## API Reference
+
+### `pkg/certificate`
+
+#### `ParseFile(filename string) ([]*x509.Certificate, string, error)`
+Parse a certificate file (auto-detects PEM or DER format).
+
+**Returns:** certificates, format ("PEM" or "DER"), error
+
+#### `ParsePEMCertificates(data []byte) ([]*x509.Certificate, error)`
+Parse PEM-encoded certificates from raw bytes.
+
+#### `Display(certs []*x509.Certificate)`
+Display certificates in human-readable format to stdout.
+
+#### `PrintDetails(cert *x509.Certificate)`
+Print detailed certificate information to stdout.
+
+#### `PrintDetailsToWriter(cert *x509.Certificate, output io.Writer)`
+Print certificate details to a specific writer.
+
+#### `FormatFingerprint(certRaw []byte, algorithm string) string`
+Generate certificate fingerprint. Algorithms: "sha1", "sha256"
+
+#### `Save(certs []*x509.Certificate, config SaveConfig) error`
+Save certificates in specified format (pem, der, text).
+
+#### `SavePEM(certs []*x509.Certificate, output io.Writer) error`
+Save certificates in PEM format.
+
+#### `SaveDER(certs []*x509.Certificate, output io.Writer) error`
+Save certificate in DER format (leaf only).
+
+#### `SaveText(certs []*x509.Certificate, output io.Writer) error`
+Save certificates in human-readable text format.
+
+### `pkg/connection`
+
+#### `TestDirectTLS(config TLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`
+Test a direct TLS connection (HTTPS, IMAPS, etc.).
+
+**TLSConfig fields:**
+- `Host string` - Target hostname
+- `Port string` - Target port
+- `SkipVerify bool` - Skip certificate verification
+- `ConnectTimeout time.Duration` - Connection timeout
+
+#### `TestStartTLS(config StartTLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`
+Test a StartTLS connection (SMTP, IMAP, POP3, etc.).
+
+**StartTLSConfig fields:**
+- `Host string` - Target hostname
+- `Port string` - Target port
+- `SkipVerify bool` - Skip certificate verification
+- `ConnectTimeout time.Duration` - Connection timeout
+
+#### `PrintTLSInfo(state tls.ConnectionState)`
+Print detailed TLS connection and certificate information.
+
+### `pkg/utils`
+
+#### `MaskIPAddresses(text string) string`
+Mask IPv4 and IPv6 addresses in text (requires `MAILSEND_MASK_IP` env var).
+
+#### `MaskIPSlice(addresses []string) []string`
+Mask IP addresses in a string slice (requires `MAILSEND_MASK_IP` env var).
+
+---
+
+### Best Practices
+
+1. **Always set timeouts** when making connections to prevent hanging
+2. **Handle errors properly** - connection failures are common
+3. **Use `SkipVerify: false`** in production unless you have a specific reason
+4. **Check certificate expiration** dates if you're monitoring certificates
+5. **Use PEM format** for saving full certificate chains
+6. **Enable IP masking** when sharing logs or screenshots
+
+### Error Handling
+
+All functions return errors that should be checked:
+
+```go
+certs, state, err := connection.TestDirectTLS(config)
+if err != nil {
+    // Handle different error types
+    if strings.Contains(err.Error(), "timeout") {
+        log.Println("Connection timeout")
+    } else if strings.Contains(err.Error(), "certificate") {
+        log.Println("Certificate validation failed")
+    } else {
+        log.Printf("Connection error: %v", err)
+    }
+    return
+}
+```
 
 ## License
 

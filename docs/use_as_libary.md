@@ -262,8 +262,8 @@ go build .
 
 ```bash
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878bae60582sm97362196d6.7 - gsmtp
-EHLO response: 250-smtp.gmail.com at your service, [2600:4040:7800:5500:d0e5:435d:ef7c:6518]
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55aa44901sm96789721cf.18 - gsmtp
+EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
 250-STARTTLS
