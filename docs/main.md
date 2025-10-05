@@ -6,5 +6,6 @@
 @[:markdown](install.md)
 @[:markdown](examples.md)
 @[:markdown](sample_output.md)
+@[:markdown](use_as_libary.md)
 @[:markdown](license.md)
 @[:markdown](authors.md)
