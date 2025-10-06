@@ -66,7 +66,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (844 days remaining)
+Status:                ✅ Valid (843 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -85,7 +85,7 @@ Connecting to 127.0.0.1:8881
 Verify Certificate: Yes
 Use StartTLS: No
 
-2025/10/05 16:34:39 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
+2025/10/05 20:28:37 Direct TLS connection failed: failed to establish TLS connection: tls: failed to verify certificate: x509: “example.com” certificate is not standards compliant
 ```
 #### Skip Verification
 ```bash
@@ -135,7 +135,7 @@ Verify Certificate: Yes
 Use StartTLS: Yes
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55af25f8csm101945591cf.21 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP 6a1803df08f44-878be61fb91sm100289376d6.60 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
@@ -204,7 +204,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (844 days remaining)
+Status:                ✅ Valid (843 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -287,7 +287,7 @@ Serial Number:         159159747900478145820483398898491642637
 Version:               3
 Valid From:            2020-06-19 00:00:42 UTC
 Valid Until:           2028-01-28 00:00:42 UTC
-Status:                ✅ Valid (844 days remaining)
+Status:                ✅ Valid (843 days remaining)
 Public Key Algorithm:  RSA
 Signature Algorithm:   SHA256-RSA
 Key Usage:             Digital Signature, Certificate Signing, CRL Signing
@@ -445,7 +445,7 @@ Save Format: PEM
 Output File: smtp-certs.pem
 
 Plain connection established, attempting StartTLS...
-Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55c9e77bcsm100180111cf.24 - gsmtp
+Server greeting: 220 smtp.gmail.com ESMTP d75a77b69052e-4e55af265a4sm111927831cf.22 - gsmtp
 EHLO response: 250-smtp.gmail.com at your service, [xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]
 250-SIZE 35882577
 250-8BITMIME
