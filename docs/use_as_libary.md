@@ -1,6 +1,6 @@
 ## How to use ssl-tls-verify as a library
 
-`ssl-tls-verify` can be use a a libary from other projects. Some examples are
+`ssl-tls-verify` can be used a libary with other projects. Some examples are
 shown below
 
 ### Cert checker
