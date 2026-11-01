@@ -1,42 +1,42 @@
-## API Reference
+# API Reference
 
-### `pkg/certificate`
+## `pkg/certificate`
 
-#### `ParseFile(filename string) ([]*x509.Certificate, string, error)`
+### `ParseFile(filename string) ([]*x509.Certificate, string, error)`
 Parse a certificate file (auto-detects PEM or DER format).
 
 **Returns:** certificates, format ("PEM" or "DER"), error
 
-#### `ParsePEMCertificates(data []byte) ([]*x509.Certificate, error)`
+### `ParsePEMCertificates(data []byte) ([]*x509.Certificate, error)`
 Parse PEM-encoded certificates from raw bytes.
 
-#### `Display(certs []*x509.Certificate)`
+### `Display(certs []*x509.Certificate)`
 Display certificates in human-readable format to stdout.
 
-#### `PrintDetails(cert *x509.Certificate)`
+### `PrintDetails(cert *x509.Certificate)`
 Print detailed certificate information to stdout.
 
-#### `PrintDetailsToWriter(cert *x509.Certificate, output io.Writer)`
+### `PrintDetailsToWriter(cert *x509.Certificate, output io.Writer)`
 Print certificate details to a specific writer.
 
-#### `FormatFingerprint(certRaw []byte, algorithm string) string`
+### `FormatFingerprint(certRaw []byte, algorithm string) string`
 Generate certificate fingerprint. Algorithms: "sha1", "sha256"
 
-#### `Save(certs []*x509.Certificate, config SaveConfig) error`
+### `Save(certs []*x509.Certificate, config SaveConfig) error`
 Save certificates in specified format (pem, der, text).
 
-#### `SavePEM(certs []*x509.Certificate, output io.Writer) error`
+### `SavePEM(certs []*x509.Certificate, output io.Writer) error`
 Save certificates in PEM format.
 
-#### `SaveDER(certs []*x509.Certificate, output io.Writer) error`
+### `SaveDER(certs []*x509.Certificate, output io.Writer) error`
 Save certificate in DER format (leaf only).
 
-#### `SaveText(certs []*x509.Certificate, output io.Writer) error`
+### `SaveText(certs []*x509.Certificate, output io.Writer) error`
 Save certificates in human-readable text format.
 
-### `pkg/connection`
+## `pkg/connection`
 
-#### `TestDirectTLS(config TLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`
+### `TestDirectTLS(config TLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`
 Test a direct TLS connection (HTTPS, IMAPS, etc.).
 
 **TLSConfig fields:**
@@ -45,7 +45,7 @@ Test a direct TLS connection (HTTPS, IMAPS, etc.).
 - `SkipVerify bool` - Skip certificate verification
 - `ConnectTimeout time.Duration` - Connection timeout
 
-#### `TestStartTLS(config StartTLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`
+### `TestStartTLS(config StartTLSConfig) ([]*x509.Certificate, tls.ConnectionState, error)`
 Test a StartTLS connection (SMTP, IMAP, POP3, etc.).
 
 **StartTLSConfig fields:**
@@ -54,20 +54,27 @@ Test a StartTLS connection (SMTP, IMAP, POP3, etc.).
 - `SkipVerify bool` - Skip certificate verification
 - `ConnectTimeout time.Duration` - Connection timeout
 
-#### `PrintTLSInfo(state tls.ConnectionState)`
+### `PrintTLSInfo(state tls.ConnectionState)`
 Print detailed TLS connection and certificate information.
 
-### `pkg/utils`
+### `PrintVerifyFailure(host string, err error) bool`
+If `err` is a certificate verification failure, print the certificate chain
+presented by the server and the result of re-verifying it against the system
+roots to `stderr`, and return `true`. Returns `false` and prints nothing for
+any other error. Call it with the error returned by `TestDirectTLS` or
+`TestStartTLS`.
 
-#### `MaskIPAddresses(text string) string`
+## `pkg/utils`
+
+### `MaskIPAddresses(text string) string`
 Mask IPv4 and IPv6 addresses in text (requires `MAILSEND_MASK_IP` env var).
 
-#### `MaskIPSlice(addresses []string) []string`
+### `MaskIPSlice(addresses []string) []string`
 Mask IP addresses in a string slice (requires `MAILSEND_MASK_IP` env var).
 
 ---
 
-### Best Practices
+## Best Practices
 
 1. **Always set timeouts** when making connections to prevent hanging
 2. **Handle errors properly** - connection failures are common
@@ -76,7 +83,7 @@ Mask IP addresses in a string slice (requires `MAILSEND_MASK_IP` env var).
 5. **Use PEM format** for saving full certificate chains
 6. **Enable IP masking** when sharing logs or screenshots
 
-### Error Handling
+## Error Handling
 
 All functions return errors that should be checked:
 

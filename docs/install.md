@@ -1,11 +1,11 @@
-## Installation
+# Installation
 
-### Download pre-compiled binaries
+## Download pre-compiled binaries
 
 Please download pre-compiled binaries from @RELEASES@ page. After extracting
 the archive, copy/rename the binary to somewhere in your path.
 
-### Build from source
+## Build from source
 ```bash
 go build -o ssl-tls-verify main.go
 # or
@@ -23,7 +23,7 @@ It will compile and do the following:
     sudo cp docs/ssl-tls-verify.1 /usr/local/share/man/man1
 ```
 
-### Install directly
+## Install directly
 ```bash
 go install github.com/muquit/ssl-tls-verify@latest
 ```

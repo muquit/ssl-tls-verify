@@ -10,7 +10,10 @@ MAIN_MD=./docs/main.md
 MAN_PAGE=./docs/ssl-tls-verify.1
 
 
-all: build build_all doc man_page
+.PHONY: all build install build_all release check_github_token doc docs man_page test gen_files clean \
+	release_notes
+
+all: build build_all doc man_page docs
 
 build:
 	@echo "Compiling ..."
@@ -27,6 +30,22 @@ build_all:
 	go-xbuild-go -build-args '$(BUILD_OPTIONS) $(LDFLAGS)' \
 		-additional-files $(MAN_PAGE)
 
+# publish the GitHub release from ./bin using go-xbuild-go. It also
+# pushes the homebrew formula. Requires GITHUB_TOKEN
+release: check_github_token
+	go-xbuild-go -release
+
+release_notes:
+	./scripts/gen_release_notes.sh
+	/bin/cp -fv /tmp/release_notes.md .
+
+# check if GITHUB_TOKEN is valid
+check_github_token:
+	@curl -s -H "Authorization: token $(GITHUB_TOKEN)" \
+		https://api.github.com/user | jq '{login, name, type}'
+	@curl -sI -H "Authorization: token $(GITHUB_TOKEN)" \
+		https://api.github.com/user | grep -i x-oauth-scopes
+
 doc: gen_files 
 	@echo "*** Generating README.md with TOC ..."
 	@touch $(README)
@@ -34,6 +53,8 @@ doc: gen_files
 	$(MARKDOWN_TOC_PROG) -i $(MAIN_MD) -o $(README) --glossary ${GLOSSARY_FILE} -f
 	@chmod 444 $(README)
 	$(MARKDOWN_TOC_PROG) -no-credit -i docs/ChangeLog.md -o ./ChangeLog.md --glossary ${GLOSSARY_FILE} -f
+
+docs: doc
 
 man_page:
 	pandoc README.md -s -t man \

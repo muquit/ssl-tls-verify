@@ -1,15 +1,15 @@
-## Synopsis
+# Synopsis
 ```
-ssl-tls-verify v1.0.3
-https://github.com/muquit/ssl-tls-verify
 A cross-platform command line tool to test and verify SSL/TLS connections
 and display certificate files in a human readable format
 
 Usage:
   -dump string
     	Read and display certificate file (PEM or DER format)
+  -example
+    	Show usage examples and exit
   -host string
-    	Target host (default "google.com")
+    	Target host (required unless given as an argument)
   -output string
     	Output file for saved certificates (default: stdout)
   -port string
@@ -30,17 +30,10 @@ Save Formats:
   der   - DER encoded certificates (binary format)
   text  - Human-readable text format with details
 
-Examples:
-  Test SSL/TLS connection:
-    ssl-tls-verify --host google.com
-    ssl-tls-verify --host smtp.gmail.com --port 587 --starttls
+Use --example to see usage examples
 
-  Display certificate files:
-    ssl-tls-verify --dump certificate.pem
-    ssl-tls-verify --dump certificate.der
+ ssl-tls-verify v1.0.4
+ https://github.com/muquit/ssl-tls-verify
+ Compiled with go version: go1.27.3
 
-  Save certificates from connection:
-    ssl-tls-verify --host google.com --save pem --output certs.pem
-    ssl-tls-verify --host google.com --save text --output report.txt
-    ssl-tls-verify --host smtp.gmail.com --port 587 --starttls --save pem
 ```

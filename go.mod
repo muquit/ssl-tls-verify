@@ -1,3 +1,3 @@
 module github.com/muquit/ssl-tls-verify
 
-go 1.25.1
+go 1.27.3

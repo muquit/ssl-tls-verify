@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 `ssl-tls-verify` is a simple cross-platform command line tool to test and 
 verify SSL/TLS connections with detailed certificate inspection.
 It supports both direct TLS connections (like HTTPS) and StartTLS protocol 

@@ -1,10 +1,14 @@
-## Features
+# Features
 
-### SSL/TLS Connection Testing
+## SSL/TLS Connection Testing
 - **Direct TLS connections** - Test HTTPS and other TLS-enabled services (port 443)
 - **StartTLS support** - Test SMTP, IMAP, and other protocols that upgrade to TLS (port 587)
 - **Certificate verification** - Option to skip verification with `--skip-verify` flag
 - **Configurable timeouts** - Control connection timeout duration
+- **Verification failure details** - If certificate verification fails, the
+certificate chain presented by the server (subject, issuer, validity and
+SHA-256 fingerprint) and the result of re-verifying it against the system
+roots are printed, in addition to the error
 - **Output** - Human-readable certificate chain display with:
   - TLS version and cipher suite information
   - Complete certificate chain (leaf + intermediates)
@@ -14,7 +18,7 @@
   - Key usage and extended key usage
   - Certificate Authority information
 
-### Certificate File Display
+## Certificate File Display
 - **Read certificate files** - Display any certificate file in human readable format
 - **Multiple format support**:
   - PEM format (`.pem`)
@@ -22,7 +26,7 @@
 - **Automatic format detection** - No need to specify the format
 - **Certificate chain display** - Shows all certificates in multi-cert files
 
-### Certificate Export
+## Certificate Export
 - **Save from live connections** - Export certificates retrieved from SSL/TLS connections
 - **Multiple export formats**:
   - **PEM** - Standard text format with Base64 encoding (full chain supported)
@@ -31,11 +35,11 @@
 - **Flexible output** - Save to file or pipe to stdout (except DER)
 - **Chain preservation** - PEM and TEXT formats save complete certificate chains
 
-### Security & Privacy
+## Security & Privacy
 - **IP address masking** - Optional masking IP address in StartTLS EHLO with `MAILSEND_MASK_IP` environment variable
 - **Secure connections** - TLS support (TLS 1.0 - 1.3)
 - **Certificate validation** - Full certificate chain verification
-### Cross Platform
+## Cross Platform
 - Pre-compiled binaries are available in @RELEASES@ page. But can be cross-compiled for any
 platforms @GO@ supports. Currently it is more than 40 platforms (Look at
         `platforms.txt` or run `go tool dist list` to see the list of

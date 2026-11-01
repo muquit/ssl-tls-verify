@@ -1,4 +1,4 @@
-## Background
+# Background
 
 There was a lingering bug in @MAILSEND_GO@ that `-verifyCert` was broken (Bug
         #71)

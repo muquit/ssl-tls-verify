@@ -1,9 +1,26 @@
-## Examples
-### Commands
+# Examples
+## Commands
 
 Test HTTPS connection with certificate verification:
 ```bash
 ./ssl-tls-verify --host google.com --port 443
+```
+
+The host can also be given as an argument. Flags must come before it:
+```bash
+./ssl-tls-verify google.com
+./ssl-tls-verify --port 8443 example.com
+```
+
+Check a host whose certificate chain contains a blocked intermediate CA. It
+should fail verification and print the certificate chain presented by the server:
+```bash
+./ssl-tls-verify dv-g3b-emudhra.we-have-a-problem.com
+```
+
+Show usage examples:
+```bash
+./ssl-tls-verify --example
 ```
 
 Test HTTPS connection ignoring certificate errors:

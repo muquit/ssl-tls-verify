@@ -1,16 +1,16 @@
-## How to use ssl-tls-verify as a library
+# How to use ssl-tls-verify as a library
 
 `ssl-tls-verify` can be used a libary with other projects. Some examples are
 shown below
 
-### Cert checker
+## Cert checker
 
-#### Create a project directory
+### Create a project directory
 ```bash
 mkdir cert_checker
 cd cert_checker
 ```
-#### Create `main.go`
+### Create `main.go`
 
 ```go
 package main
@@ -53,19 +53,19 @@ func main() {
     }
 }
 ```
-#### Initialize go module
+### Initialize go module
 
 ```bash
 go mod init cert_checker
 go mod tidy
 ```
 
-#### Build
+### Build
 ```bash
 go build .
 ```
 
-#### Run
+### Run
 ```bash
 ./cert_checker
 ```
@@ -75,13 +75,13 @@ OK: github.com - Valid for 123 days
 OK: stackoverflow.com - Valid for 49 days
 ```
 
-### TLS checker
-#### Create a project directory
+## TLS checker
+### Create a project directory
 ```bash
 mkdir tls_checker
 cd tls_checker
 ```
-#### Create `main.go`
+### Create `main.go`
 
 ```go
 package main
@@ -115,18 +115,18 @@ func main() {
     connection.PrintTLSInfo(state)
 }
 ```
-#### Initialize go module
+### Initialize go module
 ```bash
 go mod init tls_checker
 go mod tidy
 ```
 
-#### Build
+### Build
 ```bash
 go build .
 ```
 
-#### Run
+### Run
 ```bash
 ./tls_checker
 ```
@@ -201,14 +201,14 @@ SHA-1 Fingerprint:     08:74:54:87:E8:91:C1:9E:30:78:C1:F2:A0:7E:45:29:50:EF:36:
 SHA-256 Fingerprint:   3E:E0:27:8D:F7:1F:A3:C1:25:C4:CD:48:7F:01:D7:74:69:4E:6F:C5:7E:0C:D9:4C:24:EF:D7:69:13:39:18:E5
 Certificate Authority: Yes
 ```
-### StartTLS checker
+## StartTLS checker
 
-#### Create a project directory
+### Create a project directory
 ```bash
 mkdir starttls_checker
 cd starttls_checker
 ```
-#### Create `main.go`
+### Create `main.go`
 
 ```go
 package main
@@ -243,18 +243,18 @@ func main() {
     connection.PrintTLSInfo(state)
 }
 ```
-#### Initialize go module
+### Initialize go module
 ```bash
 go mod init starttls_checker
 go mod tidy
 ```
 
-#### Build
+### Build
 ```bash
 go build .
 ```
 
-#### Run
+### Run
 
 ```bash
 ./starttls_checker
@@ -341,16 +341,16 @@ SHA-1 Fingerprint:     08:74:54:87:E8:91:C1:9E:30:78:C1:F2:A0:7E:45:29:50:EF:36:
 SHA-256 Fingerprint:   3E:E0:27:8D:F7:1F:A3:C1:25:C4:CD:48:7F:01:D7:74:69:4E:6F:C5:7E:0C:D9:4C:24:EF:D7:69:13:39:18:E5
 Certificate Authority: Yes
 ```
-### Display certificate files
+## Display certificate files
 
 It looks for `cert.pem` in the current working directory
 
-#### Create a project directory
+### Create a project directory
 ```bash
 mkdir print_certs
 cd print_certs
 ```
-#### Create `main.go`
+### Create `main.go`
 
 ```go
 package main
@@ -374,19 +374,19 @@ func main() {
 }
 
 ```
-#### Initialize go module
+### Initialize go module
 
 ```bash
 go mod init print_certs
 go mod tidy
 ```
 
-#### Build
+### Build
 ```bash
 go build .
 ```
 
-#### Run
+### Run
 ```bash
 ./print_certs
 ```
@@ -414,13 +414,13 @@ SHA-256 Fingerprint:   43:B8:D4:CF:36:CF:3D:B7:6A:12:06:C2:74:C8:8B:A0:D4:CE:8A:
 Certificate Authority: Yes
 ```
 
-### Parse PEM Certificates from memory
-#### Create a project directory
+## Parse PEM Certificates from memory
+### Create a project directory
 ```bash
 mkdir parse_pem
 cd parse_pem
 ```
-#### Create `main.go`
+### Create `main.go`
 ```go
 package main
 
@@ -475,19 +475,19 @@ yr8lqoaAcOSOX+Pt0w==
     certificate.Display(certs)
 }
 ```
-#### Initialize go module
+### Initialize go module
 
 ```bash
 go mod init parse_pem
 go mod tidy
 ```
 
-#### Build
+### Build
 ```bash
 go build .
 ```
 
-#### Run
+### Run
 ```bash
 ./parse_pem
 ```
@@ -514,12 +514,12 @@ SHA-1 Fingerprint:     D7:4B:21:59:30:4C:84:B0:7C:5D:2E:80:15:66:32:88:7D:62:65:
 SHA-256 Fingerprint:   43:B8:D4:CF:36:CF:3D:B7:6A:12:06:C2:74:C8:8B:A0:D4:CE:8A:AD:7B:6C:A5:1C:C8:6D:2B:DB:D5:A9:13:8F
 Certificate Authority: Yes
 ```
-### Save certs to different formats
+## Save certs to different formats
 ```bash
 mkdir save_certs
 cd save_certs
 ```
-#### Create `main.go`
+### Create `main.go`
 
 ```go
 package main
@@ -574,19 +574,19 @@ func main() {
     }
 }
 ```
-#### Initialize go module
+### Initialize go module
 
 ```bash
 go mod init save_certs
 go mod tidy
 ```
 
-#### Build
+### Build
 ```bash
 go build .
 ```
 
-#### Run
+### Run
 ```bash
 ./save_certs
 ```
@@ -601,13 +601,13 @@ go build .
 ✅ Successfully saved 2 certificate(s) in TEXT format to certificate-details.txt
 ```
 
-### Generate certificate fingerprints
-#### Create a project directory
+## Generate certificate fingerprints
+### Create a project directory
 ```bash
 mkdir gen_fingerprint
 cd gen_fingerprint
 ```
-#### Create `main.go`
+### Create `main.go`
 ```go
 package main
 
@@ -643,19 +643,19 @@ func main() {
     fmt.Printf("SHA-256 Fingerprint: %s\n", sha256FP)
 }
 ```
-#### Initialize go module
+### Initialize go module
 
 ```bash
 go mod init gen_fingerprint
 go mod tidy
 ```
 
-#### Build
+### Build
 ```bash
 go build .
 ```
 
-#### Run
+### Run
 ```bash
 ./gen_fingerprint
 ```

@@ -4,6 +4,7 @@
 @[:markdown](synopsis.md)
 @[:markdown](version.md)
 @[:markdown](install.md)
+@[:markdown](brew_install.md)
 @[:markdown](examples.md)
 @[:markdown](sample_output.md)
 @[:markdown](use_as_libary.md)
